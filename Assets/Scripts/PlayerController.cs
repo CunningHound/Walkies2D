@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public float maxY;
+    public float minY;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,16 @@ public class PlayerController : MonoBehaviour
 
         if (movement.magnitude > 0)
         {
-            transform.position = transform.position + (movement * speed * Time.deltaTime);
+            Vector3 newPosition = transform.position + (movement * speed * Time.deltaTime);
+            if(newPosition.y > maxY)
+            {
+                newPosition.y = maxY;
+            }
+            else if(newPosition.y < minY)
+            {
+                newPosition.y = minY;
+            }
+            transform.SetPositionAndRotation(newPosition,Quaternion.identity);
         }
     }
 }
