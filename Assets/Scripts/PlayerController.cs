@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
-        float inputZ = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(inputX, 0, inputZ);
+        float inputY = Input.GetAxis("Vertical");
+        Vector3 movement = new Vector3(inputX, inputY, 0);
         if (movement.magnitude > 1)
         {
             movement = movement / movement.magnitude;
@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
         if (movement.magnitude > 0)
         {
-            transform.LookAt(transform.position + movement);
             transform.position = transform.position + (movement * speed * Time.deltaTime);
         }
     }
