@@ -41,12 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Distant Background
-    uniqueID: 2333318899
+  - name: Level Foreground
+    uniqueID: 1889952583
     locked: 0
   - name: Level Background
     uniqueID: 3660843739
     locked: 0
-  - name: Level Foreground
-    uniqueID: 1889952583
+  - name: Distant Background
+    uniqueID: 2333318899
     locked: 0
