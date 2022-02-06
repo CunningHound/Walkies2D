@@ -42,6 +42,15 @@ public class PlayerController : MonoBehaviour
 
     public void React(ScaryThing scaryThing)
     {
-        Debug.Log("Gaika: oh no! *barkbarkbark*");
+        switch (scaryThing.scareType)
+        {
+            case ScaryThingType.BigBlackDog:
+                Debug.Log("Gaika: oh no! *barkbarkbark*");
+                break;
+            case ScaryThingType.Jogger:
+                break;
+            case ScaryThingType.RubbishCollector:
+                break;
+        }
     }
 }

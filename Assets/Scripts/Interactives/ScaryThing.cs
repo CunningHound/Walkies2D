@@ -31,6 +31,5 @@ public class ScaryThing : MonoBehaviour
 
     void Activate()
     {
-        Debug.Log("boo");
     }
 }
