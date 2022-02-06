@@ -31,5 +31,11 @@ public class ScaryThing : MonoBehaviour
 
     void Activate()
     {
+        Avoider avoider = gameObject.GetComponent<Avoider>();
+        if(avoider != null)
+        {
+            Debug.Log("invalidating avoider");
+            avoider.valid = false;
+        }
     }
 }
