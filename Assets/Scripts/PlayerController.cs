@@ -39,4 +39,9 @@ public class PlayerController : MonoBehaviour
             transform.SetPositionAndRotation(newPosition,Quaternion.identity);
         }
     }
+
+    public void React(ScaryThing scaryThing)
+    {
+        Debug.Log("Gaika: oh no! *barkbarkbark*");
+    }
 }
