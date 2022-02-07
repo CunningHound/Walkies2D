@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     public float maxY;
     public float minY;
 
+    private bool sitting;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        sitting = true; 
     }
 
     // Update is called once per frame
@@ -20,7 +22,12 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(inputX, inputY, 0);
-        if (movement.magnitude > 1)
+        float magnitude = movement.magnitude;
+        if( sitting && magnitude > 0 )
+        {
+            sitting = false;
+        }
+        if (magnitude > 1)
         {
             movement = movement / movement.magnitude;
         }
@@ -48,6 +55,14 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Gaika: oh no! *barkbarkbark*");
                 break;
             case ScaryThingType.Jogger:
+                if (sitting)
+                {
+                    ;
+                }
+                else
+                {
+                    Debug.Log("Gaika: *barkbark* that was close!");
+                }
                 break;
             case ScaryThingType.RubbishCollector:
                 break;
