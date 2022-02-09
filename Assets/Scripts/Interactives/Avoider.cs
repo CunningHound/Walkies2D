@@ -30,7 +30,7 @@ public class Avoider : MonoBehaviour
 
         isEscaping = false;
 
-        xDestination = Random.value > 0.5 ? -100 : 200;
+        xDestination = -100;
         yDestination = transform.position.y;
     }
 

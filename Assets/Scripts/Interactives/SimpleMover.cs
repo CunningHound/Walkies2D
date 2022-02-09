@@ -5,22 +5,19 @@ using UnityEngine;
 public class SimpleMover : MonoBehaviour
 {
     public float speed;
-    public float xTarget;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        // stick to 1d for now
+        float xTarget = -100;
+
         float xPosition = transform.position.x;
-        if(Mathf.Abs(xPosition - xTarget) < 0.5 )
-        {
-            // set new value, don't care for now
-        }
         if(xPosition < xTarget) // going right
         {
             transform.position += new Vector3(Time.deltaTime * speed, 0, 0);
@@ -29,6 +26,5 @@ public class SimpleMover : MonoBehaviour
         {
             transform.position += new Vector3(-Time.deltaTime * speed, 0, 0);
         }
-
     }
 }

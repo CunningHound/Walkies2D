@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
 
     public int maxObstacles;
     public int maxDistance;
+    public int timeBetweenSpawns;
+    private float minTimeUntilNextSpawn;
 
     public List<GameObject> unlimitedSpawnables = new List<GameObject>();
     public List<GameObject> limitedSpawnables = new List<GameObject>();
@@ -17,22 +19,39 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        minTimeUntilNextSpawn = timeBetweenSpawns;
     }
 
     // Update is called once per frame
     void Update()
     {
-        while (player != null && obstacles.Count < maxObstacles && (unlimitedSpawnables.Count > 0 || limitedSpawnables.Count > 0))
+        minTimeUntilNextSpawn -= Time.deltaTime;
+        if (minTimeUntilNextSpawn <= 0)
         {
-            Spawn();
+            if (player != null && obstacles.Count < maxObstacles && (unlimitedSpawnables.Count > 0 || limitedSpawnables.Count > 0))
+            {
+                minTimeUntilNextSpawn = timeBetweenSpawns;
+                Spawn();
+            }
+        }
+    }
+
+    private void CleanDistantObstacles()
+    {
+        foreach(GameObject obstacle in obstacles)
+        {
+            if (Mathf.Abs(obstacle.transform.position.x - player.transform.position.x) > maxDistance )
+            {
+                obstacles.Remove(obstacle);
+                Destroy(obstacle);
+            }
         }
     }
 
     private void Spawn()
     {
-        Debug.Log("spawning!");
         Vector3 playerPosition = player.transform.position;
-        float xPos = Random.value > 0.5 ? playerPosition.x + maxDistance : playerPosition.x - maxDistance;
+        float xPos = playerPosition.x + maxDistance;
         float yPos = Random.Range(-4, 0.5f);
         Vector3 spawnPosition = new Vector3(xPos, yPos, 0);
         if (limitedSpawnables.Count > 0 && Random.value > 0.95)
