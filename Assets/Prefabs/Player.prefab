@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1826872759500986204}
   - component: {fileID: 1826872759500986205}
   - component: {fileID: 1826872759500986206}
+  - component: {fileID: 7674110085857256719}
   m_Layer: 0
   m_Name: temp gaika_0
   m_TagString: Untagged
@@ -156,7 +157,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1889952583
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 5360456499710766543, guid: e8cb32e434fe17740b72bf351a8b0a03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -188,3 +189,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7674110085857256719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826872759500986207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eaec30be78fdd4184445266b94de62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

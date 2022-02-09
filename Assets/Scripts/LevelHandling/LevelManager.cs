@@ -7,13 +7,9 @@ public class LevelManager : MonoBehaviour
     public GameObject player;
     public int score;
 
-    public int maxLives;
-    private int lives;
-
     // Start is called before the first frame update
     void Start()
     {
-        lives = maxLives;
     }
 
     // Update is called once per frame
@@ -26,25 +22,6 @@ public class LevelManager : MonoBehaviour
             {
                 score = currentPos;
             }
-        }
-    }
-
-    public void loseLife()
-    {
-        lives--;
-        if(lives <= 0)
-        {
-            // end game
-
-            // go to menu
-        }
-    }
-
-    public void addLife()
-    { 
-        if(lives < maxLives)
-        {
-            lives++;
         }
     }
 }

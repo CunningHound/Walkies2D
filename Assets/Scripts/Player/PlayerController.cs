@@ -10,9 +10,12 @@ public class PlayerController : MonoBehaviour
 
     private bool sitting;
 
+    private LivesManager livesManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        livesManager = FindObjectOfType<LivesManager>();
         sitting = true; 
     }
 
@@ -47,24 +50,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void loseLife()
+    {
+        Debug.Log("lose life");
+        if(livesManager != null)
+        {
+            livesManager.loseLife();
+        }
+    }
+
     public void React(ScaryThing scaryThing)
     {
         switch (scaryThing.scareType)
         {
             case ScaryThingType.BigBlackDog:
-                Debug.Log("Gaika: oh no! *barkbarkbark*");
+                loseLife();
                 break;
             case ScaryThingType.Jogger:
+            case ScaryThingType.RubbishCollector:
                 if (sitting)
                 {
                     ;
                 }
                 else
                 {
-                    Debug.Log("Gaika: *barkbark* that was close!");
+                    loseLife();
                 }
-                break;
-            case ScaryThingType.RubbishCollector:
                 break;
         }
     }
