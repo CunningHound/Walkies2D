@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         scoreManager = Globals.scoreManager;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
