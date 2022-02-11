@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject player;
+    public GameOverScreen gameOverScreen;
+    public ScoreManager scoreManager;
     public int score;
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
+        scoreManager = Globals.scoreManager;
     }
 
     // Update is called once per frame
@@ -23,6 +25,11 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
-
+        Time.timeScale = 0;
+        if( gameOverScreen != null && scoreManager != null )
+        {
+            Instantiate(gameOverScreen);
+            gameOverScreen.Display(scoreManager.currentScore);
+        }
     }
 }

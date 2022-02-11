@@ -36,7 +36,7 @@ public class LivesManager : MonoBehaviour
 
     public void loseLife()
     { 
-        if(livesLeft > 0)
+        if(livesLeft > 1)
         {
             livesLeft--;
             Debug.Log("lost life, now:" + livesLeft);
