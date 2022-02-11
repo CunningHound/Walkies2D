@@ -14,11 +14,13 @@ public class Spawner : MonoBehaviour
     public List<GameObject> unlimitedSpawnables = new List<GameObject>();
     public List<GameObject> limitedSpawnables = new List<GameObject>();
     private List<GameObject> obstacles = new List<GameObject>();
+    private int obstacleCount = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        obstacleCount = 0;
         minTimeUntilNextSpawn = timeBetweenSpawns;
     }
 
@@ -57,17 +59,19 @@ public class Spawner : MonoBehaviour
         if (limitedSpawnables.Count > 0 && Random.value > 0.95)
         {
             int x = Random.Range(0, limitedSpawnables.Count);
-            GameObject newObstacle = limitedSpawnables[x];
-            Instantiate(newObstacle, spawnPosition, Quaternion.identity);
+            GameObject newObstacle = Instantiate(limitedSpawnables[x], spawnPosition, Quaternion.identity);
             obstacles.Add(newObstacle);
+            newObstacle.name = limitedSpawnables[x].name + obstacleCount;
+            obstacleCount++;
             limitedSpawnables.RemoveAt(x);
         }
         else if (unlimitedSpawnables.Count > 0)
         {
             int x = Random.Range(0, unlimitedSpawnables.Count);
-            GameObject newObstacle = unlimitedSpawnables[x];
+            GameObject newObstacle = Instantiate(unlimitedSpawnables[x], spawnPosition, Quaternion.identity);
             obstacles.Add(newObstacle);
-            Instantiate(newObstacle, spawnPosition, Quaternion.identity);
+            newObstacle.name = unlimitedSpawnables[x].name + obstacleCount;
+            obstacleCount++;
         }
     }
 }
