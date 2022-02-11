@@ -6,27 +6,17 @@ using UnityEngine.UI;
 public class LivesManager : MonoBehaviour
 {
     public int maxLives;
-    private int livesLeft;
+    public int livesLeft { get; private set;}
+   
 
-    public Image life1;
-    public Image life2;
-    public Image life3;
-    
-
-    void Start()
+    void Awake()
     {
-        livesLeft = maxLives;
-        life1.enabled = true;
-        life2.enabled = true;
-        life3.enabled = true;
+        Globals.livesManager = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        life1.enabled = (livesLeft > 0);
-        life2.enabled = (livesLeft > 1);
-        life3.enabled = (livesLeft > 2);
+        livesLeft = maxLives;
     }
 
     public bool addLife()

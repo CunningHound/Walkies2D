@@ -11,11 +11,17 @@ public class PlayerController : MonoBehaviour
     private bool sitting;
 
     private LivesManager livesManager;
+    private ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        livesManager = FindObjectOfType<LivesManager>();
+        livesManager = Globals.livesManager;
+        scoreManager = Globals.scoreManager;
+        if (scoreManager != null)
+        {
+            scoreManager.player = this;
+        }
         sitting = true; 
     }
 
@@ -78,6 +84,10 @@ public class PlayerController : MonoBehaviour
                     loseLife();
                 }
                 break;
+        }
+        if(scoreManager != null)
+        {
+            scoreManager.Penalise(scaryThing.scareType);
         }
     }
 }

@@ -8,6 +8,10 @@ public class LevelManager : MonoBehaviour
     public int score;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Globals.levelManager = this;
+    }
     void Start()
     {
     }
@@ -15,13 +19,5 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player != null)
-        {
-            int currentPos = (int)Mathf.Floor(10*player.transform.position.x);
-            if(currentPos > score)
-            {
-                score = currentPos;
-            }
-        }
     }
 }
