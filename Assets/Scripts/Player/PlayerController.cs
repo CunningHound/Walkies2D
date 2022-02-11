@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     public void React(ScaryThing scaryThing)
     {
+        Debug.Log("reacting to ScaryThing " + scaryThing.transform.parent.name);
         switch (scaryThing.scareType)
         {
             case ScaryThingType.BigBlackDog:
