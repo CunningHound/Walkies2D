@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 7179137594818800011, guid: caa0c0dd13f29ce4b93a686ccf9c677e, type: 3}
+    - target: {fileID: 2158939523059143915, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158939523059143915, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158939523059143915, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2650354962010656635, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -129,18 +141,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4553807376852373664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704442456601082825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08eaec30be78fdd4184445266b94de62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &9053672443882170655
 Animator:
   serializedVersion: 3
@@ -160,3 +160,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4553807376852373664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704442456601082825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eaec30be78fdd4184445266b94de62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

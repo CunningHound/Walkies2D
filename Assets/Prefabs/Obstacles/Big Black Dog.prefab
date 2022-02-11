@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1930755550746025786}
   - component: {fileID: 5244557838704048434}
   - component: {fileID: 3066093459413669717}
+  - component: {fileID: 8409864306526442208}
   m_Layer: 0
   m_Name: Big Black Dog avoider
   m_TagString: Untagged
@@ -63,8 +64,29 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.5, y: 3}
-  m_Direction: 0
+  m_Size: {x: 3, y: 2.5}
+  m_Direction: 1
+--- !u!50 &8409864306526442208
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658830007711535611}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &2241206045410886592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79,6 +101,22 @@ PrefabInstance:
     - target: {fileID: 1585516176859231064, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158939523059143915, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158939523059143915, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290059350817543629, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2427129058643207782, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_Name
+      value: Big Black Dog Scary Thing
       objectReference: {fileID: 0}
     - target: {fileID: 2650354962010656635, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_RootOrder
@@ -126,11 +164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2700367943333892576, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2700367943333892576, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Size.y
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4662744214234590695, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: speed
