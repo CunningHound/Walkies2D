@@ -36,12 +36,14 @@ public class Spawner : MonoBehaviour
                 Spawn();
             }
         }
+        CleanDistantObstacles();
     }
 
     private void CleanDistantObstacles()
     {
-        foreach(GameObject obstacle in obstacles)
+        for(int i = obstacles.Count - 1; i >= 0; i--)
         {
+            GameObject obstacle = obstacles[i];
             if (Mathf.Abs(obstacle.transform.position.x - player.transform.position.x) > maxDistance )
             {
                 obstacles.Remove(obstacle);
