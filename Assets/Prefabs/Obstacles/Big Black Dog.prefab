@@ -49,7 +49,7 @@ MonoBehaviour:
   valid: 1
   randomUnscaredMovement: 0
   normalSpeed: 1.5
-  escapeSpeed: 4
+  escapeSpeed: 5
 --- !u!70 &3066093459413669717
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
