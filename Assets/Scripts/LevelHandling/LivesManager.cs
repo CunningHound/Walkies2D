@@ -7,6 +7,8 @@ public class LivesManager : MonoBehaviour
 {
     public int maxLives;
     public int livesLeft { get; private set;}
+
+    private LevelManager levelManager;
    
 
     void Awake()
@@ -17,6 +19,7 @@ public class LivesManager : MonoBehaviour
     private void Start()
     {
         livesLeft = maxLives;
+        levelManager = Globals.levelManager;
     }
 
     public bool addLife()
@@ -40,8 +43,8 @@ public class LivesManager : MonoBehaviour
         }
         else
         {
-            // TODO: game over
             Debug.Log("game over");
+            levelManager.GameOver();
         }
     }
 }

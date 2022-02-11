@@ -20,4 +20,9 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
     }
+
+    public void GameOver()
+    {
+
+    }
 }
