@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3128576024605927385, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: scareType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4662744214234590695, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: speed
       value: 1.5

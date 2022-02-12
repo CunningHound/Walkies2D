@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3118523871154980972}
   - component: {fileID: 3118523871154980974}
   - component: {fileID: 1203281016}
-  - component: {fileID: 6147784907863821659}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -49,8 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 4074134031884609791, guid: f119372a8d888dd45ae54062da91955a, type: 3}
   levelCompleteScreen: {fileID: 1701152822807947291, guid: dd94203eb95a0664797d89cbf9d9dddf, type: 3}
-  scoreManager: {fileID: 0}
-  score: 0
+  player: {fileID: 0}
+  levelGenerator: {fileID: 0}
+  levelLength: 100
 --- !u!114 &3118523871154980974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,22 +84,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 3
---- !u!114 &6147784907863821659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3118523871154980973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87a5e6c0d1ac6454889706859d96dae0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreAtLevelStart: 0
-  distanceThisLevel: 0
-  currentScore: 0
-  player: {fileID: 0}
 --- !u!1 &3118523871397972304
 GameObject:
   m_ObjectHideFlags: 0

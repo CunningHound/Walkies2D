@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
             scoreManager.player = this;
         }
         sitting = true; 
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -56,38 +57,39 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void loseLife()
+    private void LoseLife()
     {
-        Debug.Log("lose life");
+        Debug.Log("[PlayerController::LoseLife] lose life");
         if(livesManager != null)
         {
-            livesManager.loseLife();
+            livesManager.LoseLife();
         }
     }
 
     public void React(ScaryThing scaryThing)
     {
-        Debug.Log("reacting to ScaryThing " + scaryThing.transform.parent.name);
-        switch (scaryThing.scareType)
+        Debug.Log("[PlayerController::React] reacting to ScaryThing " + scaryThing.transform.parent.name);
+        if (scoreManager != null)
         {
-            case ScaryThingType.BigBlackDog:
-                loseLife();
-                break;
-            case ScaryThingType.Jogger:
-            case ScaryThingType.RubbishCollector:
-                if (sitting)
-                {
-                    ;
-                }
-                else
-                {
-                    loseLife();
-                }
-                break;
-        }
-        if(scoreManager != null)
-        {
-            scoreManager.Penalise(scaryThing.scareType);
+            switch (scaryThing.scareType)
+            {
+                case ScaryThingType.BigBlackDog:
+                    scoreManager.Penalise(scaryThing.scareType);
+                    LoseLife();
+                    break;
+                case ScaryThingType.Jogger:
+                case ScaryThingType.RubbishCollector:
+                    if (sitting)
+                    {
+                        ;
+                    }
+                    else
+                    {
+                        scoreManager.Penalise(scaryThing.scareType);
+                        LoseLife();
+                    }
+                    break;
+            }
         }
     }
 }

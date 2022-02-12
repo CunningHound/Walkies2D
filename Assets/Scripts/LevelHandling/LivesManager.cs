@@ -22,28 +22,26 @@ public class LivesManager : MonoBehaviour
         levelManager = Globals.levelManager;
     }
 
-    public bool addLife()
+    public bool AddLife()
     {
         if(livesLeft < maxLives)
         {
             livesLeft++;
-            Debug.Log("adding life, now: " + livesLeft);
             return true;
         }
-        Debug.Log("full lives, doing nothing");
         return false;
     }
 
-    public void loseLife()
+    public void LoseLife()
     { 
         if(livesLeft > 1)
         {
             livesLeft--;
-            Debug.Log("lost life, now:" + livesLeft);
+            Debug.Log("[LivesManager::LoseLife] lost life, now:" + livesLeft);
         }
         else
         {
-            Debug.Log("game over");
+            Debug.Log("[LivesManager::LoseLife] game over");
             levelManager.GameOver();
         }
     }

@@ -71,7 +71,7 @@ public class Avoider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger!");
+        Debug.Log("[Avoider::OnTriggerEnter2D] trigger!");
         GameObject other = collision.gameObject;
         PlayerController player = other.GetComponent<PlayerController>();
         if (valid && player != null)
@@ -84,7 +84,7 @@ public class Avoider : MonoBehaviour
     void Avoid(Transform avoidanceTarget)
     {
         isEscaping = true;
-        Debug.Log("avoiding!");
+        Debug.Log("[Avoider::Avoid] avoiding!");
         float xPos = transform.position.x;
         if(avoidanceTarget.position.x < xPos)
         {

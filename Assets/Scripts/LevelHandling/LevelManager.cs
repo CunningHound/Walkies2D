@@ -6,11 +6,11 @@ public class LevelManager : MonoBehaviour
 {
     public GameOverScreen gameOverScreen;
     public LevelCompleteScreen levelCompleteScreen;
-    public ScoreManager scoreManager;
     public PlayerController player;
 
     public LevelGenerator levelGenerator;
 
+    private ScoreManager scoreManager;
     public int levelLength;
 
     // Start is called before the first frame update
@@ -35,11 +35,9 @@ public class LevelManager : MonoBehaviour
 
     public void EndLevel()
     {
-        Time.timeScale = 0;
         if( levelCompleteScreen != null && scoreManager != null )
         {
             Instantiate(levelCompleteScreen);
-            levelCompleteScreen.Display(scoreManager.currentScore);
             scoreManager.EndLevel();
             player.transform.position = new Vector3(0, 0, 0);
         }
@@ -47,11 +45,9 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0;
         if( gameOverScreen != null && scoreManager != null )
         {
             Instantiate(gameOverScreen);
-            gameOverScreen.Display(scoreManager.currentScore);
         }
     }
 }

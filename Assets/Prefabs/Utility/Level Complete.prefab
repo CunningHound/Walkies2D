@@ -408,7 +408,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level complete
+  m_Text: 'Score
+
+    95'
 --- !u!1 &1701152823887507148
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,43 +5,85 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public int scoreAtLevelStart;
-    public int distanceThisLevel;
     public int currentScore;
-    private int subtractedThisLevel;
-    public PlayerController player;
+
+    public int distanceThisLevel;
+    public int subtractedThisLevel;
+
     private int bestLevelScore;
+
+    public PlayerController player;
+
+    private static ScoreManager instance;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        Globals.scoreManager = this;
+        if(instance == null)
+        {
+            instance = this;
+            Globals.scoreManager = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     void Start()
     {
+        ResetAll();
+    }
+
+    public void ResetAll()
+    {
         currentScore = 0;
+        scoreAtLevelStart = 0;
+
         distanceThisLevel = 0;
         subtractedThisLevel = 0;
+
         bestLevelScore = 0;
+    }
+
+    public void ResetLevelScores()
+    {
+        distanceThisLevel = 0;
+        subtractedThisLevel = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Time.timeScale == 0)
+        {
+            return; // nothing to update when paused
+            // also caused some trouble when loading new scene
+        }
         if (player != null)
         {
-            distanceThisLevel = (int)Mathf.Floor(player.transform.position.x);
+            int distance = (int)Mathf.Floor(player.transform.position.x);
+            if(distance > distanceThisLevel)
+            {
+                distanceThisLevel = distance;
+            }
         }
         currentScore = scoreAtLevelStart + distanceThisLevel - subtractedThisLevel;
     }
 
     public void EndLevel()
     {
-        if(distanceThisLevel - subtractedThisLevel > bestLevelScore)
+        Debug.Log("[ScoreManager::EndLevel]");
+        player = null;
+        currentScore = scoreAtLevelStart + distanceThisLevel - subtractedThisLevel;
+        int scoreThisLevel = distanceThisLevel - subtractedThisLevel;
+        if(scoreThisLevel > bestLevelScore)
         {
-            bestLevelScore = distanceThisLevel - subtractedThisLevel;
+            bestLevelScore = scoreThisLevel;
         }
-        scoreAtLevelStart = currentScore;
+        scoreAtLevelStart += scoreThisLevel;
+        ResetLevelScores();
     }
 
     private int getScoreCost(ScaryThingType scaryThingType)
@@ -55,7 +97,7 @@ public class ScoreManager : MonoBehaviour
             case ScaryThingType.RubbishCollector:
                 return 10;
             default:
-                Debug.Log("looking up cost of unknown scare type:" + scaryThingType);
+                Debug.Log("[ScoreManager::getScoreCost] looking up cost of unknown scare type:" + scaryThingType);
                 return 0;
         }
     }
@@ -63,6 +105,7 @@ public class ScoreManager : MonoBehaviour
     public int Penalise(ScaryThingType scaryThingType)
     {
         int scoreCost = getScoreCost(scaryThingType);
+        Debug.Log("[ScoreManager::Penalise] encountered " + scaryThingType + " and lost " + scoreCost + " points");
         subtractedThisLevel += scoreCost;
         return scoreCost;
     }
