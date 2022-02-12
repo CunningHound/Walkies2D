@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void Credits()
     {
-        // not done yet
+        SceneManager.LoadScene("Credits");
     }
 
     public void QuitGame()

@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     public int currentScore;
     private int subtractedThisLevel;
     public PlayerController player;
+    private int bestLevelScore;
 
     // Start is called before the first frame update
     private void Awake()
@@ -21,6 +22,7 @@ public class ScoreManager : MonoBehaviour
         currentScore = 0;
         distanceThisLevel = 0;
         subtractedThisLevel = 0;
+        bestLevelScore = 0;
     }
 
     // Update is called once per frame
@@ -31,6 +33,15 @@ public class ScoreManager : MonoBehaviour
             distanceThisLevel = (int)Mathf.Floor(player.transform.position.x);
         }
         currentScore = scoreAtLevelStart + distanceThisLevel - subtractedThisLevel;
+    }
+
+    public void EndLevel()
+    {
+        if(distanceThisLevel - subtractedThisLevel > bestLevelScore)
+        {
+            bestLevelScore = distanceThisLevel - subtractedThisLevel;
+        }
+        scoreAtLevelStart = currentScore;
     }
 
     private int getScoreCost(ScaryThingType scaryThingType)

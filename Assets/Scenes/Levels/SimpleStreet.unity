@@ -479,6 +479,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1056901474}
     - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelLength
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 4074134031884609791, guid: f119372a8d888dd45ae54062da91955a, type: 3}

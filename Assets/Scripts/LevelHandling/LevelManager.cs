@@ -5,8 +5,13 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public GameOverScreen gameOverScreen;
+    public LevelCompleteScreen levelCompleteScreen;
     public ScoreManager scoreManager;
-    public int score;
+    public PlayerController player;
+
+    public LevelGenerator levelGenerator;
+
+    public int levelLength;
 
     // Start is called before the first frame update
     private void Awake()
@@ -22,6 +27,22 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(player != null && player.transform.position.x > levelLength)
+        {
+            EndLevel();
+        }
+    }
+
+    public void EndLevel()
+    {
+        Time.timeScale = 0;
+        if( levelCompleteScreen != null && scoreManager != null )
+        {
+            Instantiate(levelCompleteScreen);
+            levelCompleteScreen.Display(scoreManager.currentScore);
+            scoreManager.EndLevel();
+            player.transform.position = new Vector3(0, 0, 0);
+        }
     }
 
     public void GameOver()
