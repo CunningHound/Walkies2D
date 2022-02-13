@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private ScoreManager scoreManager;
     private Animator animator;
 
+    public List<AudioSource> barks;
+    public List<AudioSource> chomps;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,15 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1;
 
         animator = GetComponentInChildren<Animator>();
+        for(int i = 0; i < barks.Count; i++)
+        {
+            barks[i] = Instantiate(barks[i]);
+        }
+
+        for(int i = 0; i < chomps.Count; i++)
+        {
+            chomps[i] = Instantiate(chomps[i]);
+        }
     }
 
     // Update is called once per frame
@@ -80,6 +92,17 @@ public class PlayerController : MonoBehaviour
             else if (newPosition.y < minY)
             {
                 newPosition.y = minY;
+            }
+            if(animator != null)
+            {
+                if (inputX == 0)
+                {
+                    animator.SetInteger("xDirection", 0);
+                }
+                else
+                {
+                    animator.SetInteger("xDirection", inputX > 0 ? 1 : -1);
+                }
             }
             transform.SetPositionAndRotation(newPosition, Quaternion.identity);
 
@@ -178,6 +201,13 @@ public class PlayerController : MonoBehaviour
     private void Bark()
     {
         Debug.Log("bark");
+        if(barks.Count > 0)
+        {
+            Debug.Log("selecting and playing a bark");
+            AudioSource bark = barks[Random.Range(0, barks.Count)];
+            bark.enabled = true;
+            bark.Play();
+        }
         if (animator != null)
         {
             animator.SetTrigger("bark");
@@ -186,6 +216,10 @@ public class PlayerController : MonoBehaviour
 
     private void Chomp()
     {
+        if(chomps.Count > 0)
+        {
+            chomps[Random.Range(0, barks.Count)].Play();
+        }
         if(animator != null)
         {
             animator.SetTrigger("eat");
