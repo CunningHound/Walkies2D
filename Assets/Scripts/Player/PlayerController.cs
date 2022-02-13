@@ -138,6 +138,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void React(TastyThing tastyThing)
+    {
+        Debug.Log("[PlayerController::React] reacting to TastyThing");
+        Chomp();
+        if(scoreManager != null)
+        {
+            scoreManager.Penalise(tastyThing.type);
+        }
+        tastyThing.Consume();
+    }
+
     private void Sit()
     {
         if(animator != null)

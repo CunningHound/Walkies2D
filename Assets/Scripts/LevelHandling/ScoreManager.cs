@@ -86,9 +86,9 @@ public class ScoreManager : MonoBehaviour
         ResetLevelScores();
     }
 
-    private int getScoreCost(ScaryThingType scaryThingType)
+    private int getScoreCost(ScaryThingType type)
     {
-        switch(scaryThingType)
+        switch(type)
         {
             case ScaryThingType.BigBlackDog:
                 return 20;
@@ -97,15 +97,33 @@ public class ScoreManager : MonoBehaviour
             case ScaryThingType.RubbishCollector:
                 return 10;
             default:
-                Debug.Log("[ScoreManager::getScoreCost] looking up cost of unknown scare type:" + scaryThingType);
+                Debug.Log("[ScoreManager::getScoreCost] looking up cost of unknown scare type:" + type);
                 return 0;
         }
     }
 
-    public int Penalise(ScaryThingType scaryThingType)
+    private int getScoreCost(TastyThingType type)
     {
-        int scoreCost = getScoreCost(scaryThingType);
-        Debug.Log("[ScoreManager::Penalise] encountered " + scaryThingType + " and lost " + scoreCost + " points");
+        switch(type)
+        {
+            default:
+                Debug.Log("[ScoreManager::getScoreCost] looking up cost of tasty thing " + type);
+                return 5;
+        }
+    }
+
+    public int Penalise(ScaryThingType type)
+    {
+        int scoreCost = getScoreCost(type);
+        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
+        subtractedThisLevel += scoreCost;
+        return scoreCost;
+    }
+
+    public int Penalise(TastyThingType type)
+    {
+        int scoreCost = getScoreCost(type);
+        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
         subtractedThisLevel += scoreCost;
         return scoreCost;
     }
