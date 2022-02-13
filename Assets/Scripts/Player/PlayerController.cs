@@ -66,13 +66,19 @@ public class PlayerController : MonoBehaviour
                 Sit();
             }
         }
-        timeSinceSitting += Time.deltaTime;
 
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
+        if(sitting && timeSinceSitting < minimumSitTime)
+        {
+            timeSinceSitting += Time.deltaTime;
+            inputX = 0;
+            inputY = 0;
+        }
+
         Vector3 movement = new Vector3(inputX, inputY, 0);
         float magnitude = movement.magnitude;
-        if (sitting && timeSinceSitting > minimumSitTime && magnitude > 0)
+        if (sitting && magnitude > 0)
         {
             sitting = false;
             StandUp();
@@ -105,12 +111,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
             transform.SetPositionAndRotation(newPosition, Quaternion.identity);
-
         }
 
         if (cameraTarget != null)
         {
-            if (movement.x > 0 && !sitting)
+            if (movement.x > 0)
             {
                 float localXTarget = Mathf.Lerp(cameraTarget.transform.localPosition.x, cameraTargetMoveAheadDistance, cameraTargetMoveAheadSpeed * Time.deltaTime);
                 cameraTarget.transform.localPosition = new Vector3(localXTarget, 0, 0);
@@ -218,7 +223,7 @@ public class PlayerController : MonoBehaviour
     {
         if(chomps.Count > 0)
         {
-            chomps[Random.Range(0, barks.Count)].Play();
+            chomps[Random.Range(0, chomps.Count)].Play();
         }
         if(animator != null)
         {
