@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private LivesManager livesManager;
     private ScoreManager scoreManager;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class PlayerController : MonoBehaviour
         sitting = false;
         timeSinceSitting = 0;
         Time.timeScale = 1;
+
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -42,11 +45,13 @@ public class PlayerController : MonoBehaviour
             if (sitting)
             {
                 sitting = false;
+                StandUp();
             }
             else
             {
                 sitting = true;
                 timeSinceSitting = 0;
+                Sit();
             }
         }
         timeSinceSitting += Time.deltaTime;
@@ -58,6 +63,7 @@ public class PlayerController : MonoBehaviour
         if (sitting && timeSinceSitting > minimumSitTime && magnitude > 0)
         {
             sitting = false;
+            StandUp();
         }
         if (magnitude > 1)
         {
@@ -112,6 +118,7 @@ public class PlayerController : MonoBehaviour
             {
                 case ScaryThingType.BigBlackDog:
                     scoreManager.Penalise(scaryThing.scareType);
+                    Bark();
                     LoseLife();
                     break;
                 case ScaryThingType.Jogger:
@@ -123,10 +130,45 @@ public class PlayerController : MonoBehaviour
                     else
                     {
                         scoreManager.Penalise(scaryThing.scareType);
+                        Bark();
                         LoseLife();
                     }
                     break;
             }
         }
     }
+
+    private void Sit()
+    {
+        if(animator != null)
+        {
+            animator.SetTrigger("sit");
+        }
+    }
+
+    private void StandUp()
+    {
+        if(animator != null)
+        {
+            animator.SetTrigger("stand");
+        }
+    }
+
+    private void Bark()
+    {
+        Debug.Log("bark");
+        if (animator != null)
+        {
+            animator.SetTrigger("bark");
+        }
+    }
+
+    private void Chomp()
+    {
+        if(animator != null)
+        {
+            animator.SetTrigger("eat");
+        }
+    }
+
 }

@@ -16,6 +16,7 @@ public class Avoider : MonoBehaviour
 
     private bool counting;
     private GameObject whatToAvoid;
+    private Animator animator;
 
     float xDestination;
     float yDestination;
@@ -32,6 +33,8 @@ public class Avoider : MonoBehaviour
 
         xDestination = -100;
         yDestination = transform.position.y;
+
+        animator = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -46,7 +49,6 @@ public class Avoider : MonoBehaviour
         movementVector.Normalize();
         movementVector *= (isEscaping? escapeSpeed : normalSpeed);
         transform.parent.transform.position += movementVector * Time.deltaTime;
-        Animator animator = GetComponentInParent<Animator>();
         if(animator != null)
         {
             animator.SetFloat("xSpeed", movementVector.x);
