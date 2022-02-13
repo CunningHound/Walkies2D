@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &336451680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7725036209416201037, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
+  m_PrefabInstance: {fileID: 1826872758447485023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &336451681 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 876171828162448188, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
+  m_PrefabInstance: {fileID: 1826872758447485023}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4263b505a3f01f249ae7015ce4b2495b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1056901476}
+  target: {fileID: 336451681}
   maxDeviationLeft: 0
   maxDeviationRight: 0
 --- !u!20 &519420031
@@ -225,11 +235,6 @@ Transform:
 --- !u!1 &1056901474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1826872757622061373, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
-  m_PrefabInstance: {fileID: 1826872758447485023}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1056901476 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1826872757622061371, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
   m_PrefabInstance: {fileID: 1826872758447485023}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1056901478 stripped
@@ -339,8 +344,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAtLevelStart: 0
-  distanceThisLevel: 0
   currentScore: 0
+  distanceThisLevel: 0
+  subtractedThisLevel: 0
   player: {fileID: 1056901478}
 --- !u!4 &1829728569
 Transform:
@@ -507,6 +513,18 @@ PrefabInstance:
     - target: {fileID: 1826872757622061371, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
+      propertyPath: cameraTarget
+      value: 
+      objectReference: {fileID: 336451680}
+    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
+      propertyPath: cameraTargetMoveAheadSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
+      propertyPath: cameraTargetMoveAheadDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1826872757622061373, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
       propertyPath: m_Name

@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public float minY;
 
     private bool sitting;
+    public GameObject cameraTarget;
+    public float cameraTargetMoveAheadDistance;
+    public float cameraTargetMoveAheadSpeed;
 
     private LivesManager livesManager;
     private ScoreManager scoreManager;
@@ -54,6 +57,21 @@ public class PlayerController : MonoBehaviour
                 newPosition.y = minY;
             }
             transform.SetPositionAndRotation(newPosition,Quaternion.identity);
+
+        }
+
+        if (cameraTarget != null)
+        {
+            if (movement.x > 0)
+            {
+                float localXTarget = Mathf.Lerp(cameraTarget.transform.localPosition.x, cameraTargetMoveAheadDistance, cameraTargetMoveAheadSpeed * Time.deltaTime);
+                cameraTarget.transform.localPosition = new Vector3(localXTarget, 0, 0);
+            }
+            else
+            {
+                float localXTarget = Mathf.Lerp(cameraTarget.transform.localPosition.x, 0, cameraTargetMoveAheadSpeed * Time.deltaTime);
+                cameraTarget.transform.localPosition = new Vector3(localXTarget, 0, 0);
+            }
         }
     }
 

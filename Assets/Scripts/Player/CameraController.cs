@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform player;
+    public Transform target;
     public int maxDeviationLeft = 0;
     public int maxDeviationRight = 0;
 
@@ -17,9 +17,9 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(player != null)
+       if(target != null)
         {
-            float shift = player.position.x - transform.position.x;
+            float shift = target.position.x - transform.position.x;
             transform.Translate(new Vector3(shift, 0, 0));
         }
     }
