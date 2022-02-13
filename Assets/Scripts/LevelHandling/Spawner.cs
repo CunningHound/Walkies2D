@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
     public int timeBetweenSpawns;
     private float minTimeUntilNextSpawn;
 
+    public float maxY;
+    public float minY;
+
     public List<GameObject> unlimitedSpawnables = new List<GameObject>();
     public List<GameObject> limitedSpawnables = new List<GameObject>();
     private List<GameObject> obstacles = new List<GameObject>();
@@ -44,7 +47,7 @@ public class Spawner : MonoBehaviour
         for(int i = obstacles.Count - 1; i >= 0; i--)
         {
             GameObject obstacle = obstacles[i];
-            if (Mathf.Abs(obstacle.transform.position.x - player.transform.position.x) > maxDistance )
+            if (obstacle != null && Mathf.Abs(obstacle.transform.position.x - player.transform.position.x) > maxDistance )
             {
                 obstacles.Remove(obstacle);
                 Destroy(obstacle);
@@ -56,7 +59,7 @@ public class Spawner : MonoBehaviour
     {
         Vector3 playerPosition = player.transform.position;
         float xPos = playerPosition.x + maxDistance;
-        float yPos = Random.Range(-4, 0.5f);
+        float yPos = Random.Range(minY, maxY);
         Vector3 spawnPosition = new Vector3(xPos, yPos, 0);
         if (limitedSpawnables.Count > 0 && Random.value > 0.95)
         {
