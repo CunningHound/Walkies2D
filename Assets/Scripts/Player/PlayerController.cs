@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     public List<AudioSource> barks;
     public List<AudioSource> chomps;
+    public List<AudioSource> bikeBells;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,12 @@ public class PlayerController : MonoBehaviour
         {
             chomps[i] = Instantiate(chomps[i]);
         }
+
+        for(int i = 0; i < bikeBells.Count; i++)
+        {
+            bikeBells[i] = Instantiate(bikeBells[i]);
+        }
+
     }
 
     // Update is called once per frame
@@ -180,6 +187,14 @@ public class PlayerController : MonoBehaviour
     public void React(MovingObstruction obstruction)
     {
         Debug.Log("[PlayerController::React] reacting to MovingObstruction: " + obstruction.type);
+        switch(obstruction.type)
+        {
+            case MovingObstructionType.Cyclist:
+                RingBell();
+                break;
+            default:
+                break;
+        }
         if(scoreManager != null)
         {
             LoseLife();
@@ -209,9 +224,7 @@ public class PlayerController : MonoBehaviour
         if(barks.Count > 0)
         {
             Debug.Log("selecting and playing a bark");
-            AudioSource bark = barks[Random.Range(0, barks.Count)];
-            bark.enabled = true;
-            bark.Play();
+            barks[Random.Range(0, barks.Count)].Play();
         }
         if (animator != null)
         {
@@ -228,6 +241,16 @@ public class PlayerController : MonoBehaviour
         if(animator != null)
         {
             animator.SetTrigger("eat");
+        }
+    }
+
+    private void RingBell()
+    {
+        // yes it is a bit silly for this to be on the dog
+        // what are you going to do about it
+        if(bikeBells.Count > 0)
+        {
+            bikeBells[Random.Range(0, bikeBells.Count)].Play();
         }
     }
 

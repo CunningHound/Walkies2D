@@ -551,6 +551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3118523871154980973, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: minY
       value: -4.5

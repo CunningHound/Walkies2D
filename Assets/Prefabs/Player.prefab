@@ -59,6 +59,9 @@ MonoBehaviour:
   - {fileID: 2667149830774072508, guid: 743c2eb2a197f404e960bf780aa59568, type: 3}
   chomps:
   - {fileID: 7782770310382670024, guid: 5b95e3ad62a54604db919776dd873652, type: 3}
+  bikeBells:
+  - {fileID: 498646912077286063, guid: 20e1c4d39ff517e4fa557908f41942de, type: 3}
+  - {fileID: 753130122561971782, guid: 63ea48e99aff96f499ae9f3c103dd549, type: 3}
 --- !u!50 &-4162652114453023042
 Rigidbody2D:
   serializedVersion: 4
