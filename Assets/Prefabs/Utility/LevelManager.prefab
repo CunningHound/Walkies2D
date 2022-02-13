@@ -64,11 +64,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  maxObstacles: 10
+  maxObstacles: 30
   maxDistance: 15
-  timeBetweenSpawns: 2
+  timeBetweenSpawns: 1
+  maxY: 0
+  minY: -4.5
   unlimitedSpawnables:
+  - {fileID: 7612075384758866378, guid: 6874056a6a536ff46b2a8ae7a0ffd082, type: 3}
+  - {fileID: 2607417569044362746, guid: 73a1b7bd85d0ffe47a0da924fda4e1ac, type: 3}
+  - {fileID: 1481607520629318932, guid: f2debf3fe0b245d4fb19ef658137638f, type: 3}
   - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+  - {fileID: 6556374484486794076, guid: 7ec11a8d1788057499bbe0980749afb3, type: 3}
+  - {fileID: 6556374484486794076, guid: 7ec11a8d1788057499bbe0980749afb3, type: 3}
+  - {fileID: 6556374484486794076, guid: 7ec11a8d1788057499bbe0980749afb3, type: 3}
   limitedSpawnables:
   - {fileID: 5913177489918972237, guid: 019994b0228c88247acf9081e5949f90, type: 3}
 --- !u!114 &1203281016

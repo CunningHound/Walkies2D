@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
     public GameOverScreen gameOverScreen;
     public LevelCompleteScreen levelCompleteScreen;
     public PlayerController player;
+    public PauseScreen pauseScreen;
 
     public LevelGenerator levelGenerator;
 
@@ -30,6 +31,11 @@ public class LevelManager : MonoBehaviour
         if(player != null && player.transform.position.x > levelLength)
         {
             EndLevel();
+        }
+
+        if(Input.GetButtonDown("Cancel"))
+        {
+            Instantiate(pauseScreen);
         }
     }
 
