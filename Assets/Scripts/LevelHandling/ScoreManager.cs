@@ -85,8 +85,31 @@ public class ScoreManager : MonoBehaviour
         scoreAtLevelStart += scoreThisLevel;
         ResetLevelScores();
     }
+    public int Penalise(ScaryThingType type)
+    {
+        int scoreCost = GetScoreCost(type);
+        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
+        subtractedThisLevel += scoreCost;
+        return scoreCost;
+    }
 
-    private int getScoreCost(ScaryThingType type)
+    public int Penalise(TastyThingType type)
+    {
+        int scoreCost = GetScoreCost(type);
+        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
+        subtractedThisLevel += scoreCost;
+        return scoreCost;
+    }
+
+    public int Penalise(MovingObstructionType type)
+    {
+        int scoreCost = GetScoreCost(type);
+        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
+        subtractedThisLevel += scoreCost;
+        return scoreCost;
+    }
+
+    private int GetScoreCost(ScaryThingType type)
     {
         switch(type)
         {
@@ -97,34 +120,30 @@ public class ScoreManager : MonoBehaviour
             case ScaryThingType.RubbishCollector:
                 return 10;
             default:
-                Debug.Log("[ScoreManager::getScoreCost] looking up cost of unknown scare type:" + type);
+                Debug.Log("[ScoreManager::GetScoreCost] looking up cost of unknown scare type:" + type);
                 return 0;
         }
     }
 
-    private int getScoreCost(TastyThingType type)
+    private int GetScoreCost(TastyThingType type)
     {
         switch(type)
         {
             default:
-                Debug.Log("[ScoreManager::getScoreCost] looking up cost of tasty thing " + type);
+                Debug.Log("[ScoreManager::GetScoreCost] looking up cost of tasty thing " + type);
                 return 5;
         }
     }
 
-    public int Penalise(ScaryThingType type)
+    private int GetScoreCost(MovingObstructionType type)
     {
-        int scoreCost = getScoreCost(type);
-        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
-        subtractedThisLevel += scoreCost;
-        return scoreCost;
-    }
-
-    public int Penalise(TastyThingType type)
-    {
-        int scoreCost = getScoreCost(type);
-        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
-        subtractedThisLevel += scoreCost;
-        return scoreCost;
+        switch(type)
+        {
+            case MovingObstructionType.Cyclist:
+                return 10;
+            default:
+                Debug.Log("[ScoreManager::GetScoreCost] looking up cost of unknown obstruction type " + type);
+                return 0;
+        }
     }
 }

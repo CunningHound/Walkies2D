@@ -149,6 +149,16 @@ public class PlayerController : MonoBehaviour
         tastyThing.Consume();
     }
 
+    public void React(MovingObstruction obstruction)
+    {
+        Debug.Log("[PlayerController::React] reacting to MovingObstruction: " + obstruction.type);
+        if(scoreManager != null)
+        {
+            LoseLife();
+            scoreManager.Penalise(obstruction.type);
+        }
+    }
+
     private void Sit()
     {
         if(animator != null)
