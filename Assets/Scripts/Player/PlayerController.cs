@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public float cameraTargetMoveAheadDistance;
     public float cameraTargetMoveAheadSpeed;
 
+    public float minimumSitTime;
+    private float timeSinceSitting;
+
     private LivesManager livesManager;
     private ScoreManager scoreManager;
 
@@ -25,18 +28,34 @@ public class PlayerController : MonoBehaviour
         {
             scoreManager.player = this;
         }
-        sitting = true; 
+        sitting = false;
+        timeSinceSitting = 0;
         Time.timeScale = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // first check if we're sitting, as that nullifies a lot of other inputs;
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (sitting)
+            {
+                sitting = false;
+            }
+            else
+            {
+                sitting = true;
+                timeSinceSitting = 0;
+            }
+        }
+        timeSinceSitting += Time.deltaTime;
+
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(inputX, inputY, 0);
         float magnitude = movement.magnitude;
-        if( sitting && magnitude > 0 )
+        if (sitting && timeSinceSitting > minimumSitTime && magnitude > 0)
         {
             sitting = false;
         }
@@ -45,24 +64,24 @@ public class PlayerController : MonoBehaviour
             movement = movement / movement.magnitude;
         }
 
-        if (movement.magnitude > 0)
+        if (!sitting && movement.magnitude > 0)
         {
             Vector3 newPosition = transform.position + (movement * speed * Time.deltaTime);
-            if(newPosition.y > maxY)
+            if (newPosition.y > maxY)
             {
                 newPosition.y = maxY;
             }
-            else if(newPosition.y < minY)
+            else if (newPosition.y < minY)
             {
                 newPosition.y = minY;
             }
-            transform.SetPositionAndRotation(newPosition,Quaternion.identity);
+            transform.SetPositionAndRotation(newPosition, Quaternion.identity);
 
         }
 
         if (cameraTarget != null)
         {
-            if (movement.x > 0)
+            if (movement.x > 0 && !sitting)
             {
                 float localXTarget = Mathf.Lerp(cameraTarget.transform.localPosition.x, cameraTargetMoveAheadDistance, cameraTargetMoveAheadSpeed * Time.deltaTime);
                 cameraTarget.transform.localPosition = new Vector3(localXTarget, 0, 0);
@@ -78,7 +97,7 @@ public class PlayerController : MonoBehaviour
     private void LoseLife()
     {
         Debug.Log("[PlayerController::LoseLife] lose life");
-        if(livesManager != null)
+        if (livesManager != null)
         {
             livesManager.LoseLife();
         }
