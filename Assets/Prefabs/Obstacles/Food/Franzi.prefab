@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7506844406187704502, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7506844406187704502, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 421241513279792914, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 421241513279792914, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2290549861580495044, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
       propertyPath: m_Name
       value: Franzi
@@ -26,6 +42,18 @@ PrefabInstance:
     - target: {fileID: 5059261755157129473, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059261755157129473, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059261755157129473, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059261755157129473, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5059261755157129473, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
       propertyPath: m_LocalPosition.x

@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &336451680 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7725036209416201037, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
-  m_PrefabInstance: {fileID: 1826872758447485023}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &336451681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 876171828162448188, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
@@ -513,22 +508,6 @@ PrefabInstance:
     - target: {fileID: 1826872757622061371, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
-      propertyPath: cameraTarget
-      value: 
-      objectReference: {fileID: 336451680}
-    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
-      propertyPath: minimumSitTime
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
-      propertyPath: cameraTargetMoveAheadSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
-      propertyPath: cameraTargetMoveAheadDistance
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1826872757622061373, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
       propertyPath: m_Name

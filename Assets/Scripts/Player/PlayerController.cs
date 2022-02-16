@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private ScoreManager scoreManager;
     private Animator animator;
 
+    public GameObject scoreChangeIndicator;
     public List<AudioSource> barks;
     public List<AudioSource> chomps;
     public List<AudioSource> bikeBells;
@@ -149,13 +150,16 @@ public class PlayerController : MonoBehaviour
         Debug.Log("[PlayerController::React] reacting to ScaryThing " + scaryThing.transform.parent.name);
         if (scoreManager != null)
         {
+            int scoreLost = 0;
             switch (scaryThing.scareType)
             {
                 case ScaryThingType.BigBlackDog:
-                    scoreManager.Penalise(scaryThing.scareType);
-                    Bark();
-                    LoseLife();
-                    break;
+                    {
+                        scoreLost = scoreManager.Penalise(scaryThing.scareType);
+                        Bark();
+                        LoseLife();
+                        break;
+                    }
                 case ScaryThingType.Jogger:
                 case ScaryThingType.RubbishCollector:
                     if (sitting)
@@ -164,11 +168,20 @@ public class PlayerController : MonoBehaviour
                     }
                     else
                     {
-                        scoreManager.Penalise(scaryThing.scareType);
+                        scoreLost = scoreManager.Penalise(scaryThing.scareType);
                         Bark();
                         LoseLife();
                     }
                     break;
+            }
+            if(scoreLost != 0 && scoreChangeIndicator != null)
+            {
+                GameObject obj = Instantiate(scoreChangeIndicator, scaryThing.transform.parent);
+                ScoreChangeIndicator change = obj.GetComponent<ScoreChangeIndicator>();
+                if (change != null)
+                {
+                    change.Display(scoreLost * -1);
+                }
             }
         }
     }
@@ -176,10 +189,20 @@ public class PlayerController : MonoBehaviour
     public void React(TastyThing tastyThing)
     {
         Debug.Log("[PlayerController::React] reacting to TastyThing");
+        int scoreLost = 0;
         Chomp();
         if(scoreManager != null)
         {
-            scoreManager.Penalise(tastyThing.type);
+            scoreLost = scoreManager.Penalise(tastyThing.type);
+        }
+        if (scoreLost != 0 && scoreChangeIndicator != null)
+        {
+            GameObject obj = Instantiate(scoreChangeIndicator, tastyThing.transform.position, Quaternion.identity);
+            ScoreChangeIndicator change = obj.GetComponent<ScoreChangeIndicator>();
+            if (change != null)
+            {
+                change.Display(scoreLost * -1);
+            }
         }
         tastyThing.Consume();
     }
@@ -187,6 +210,7 @@ public class PlayerController : MonoBehaviour
     public void React(MovingObstruction obstruction)
     {
         Debug.Log("[PlayerController::React] reacting to MovingObstruction: " + obstruction.type);
+        int scoreLost = 0;
         switch(obstruction.type)
         {
             case MovingObstructionType.Cyclist:
@@ -197,8 +221,17 @@ public class PlayerController : MonoBehaviour
         }
         if(scoreManager != null)
         {
+            scoreLost = scoreManager.Penalise(obstruction.type);
             LoseLife();
-            scoreManager.Penalise(obstruction.type);
+        }
+        if (scoreLost != 0 && scoreChangeIndicator != null)
+        {
+            GameObject obj = Instantiate(scoreChangeIndicator, obstruction.transform);
+            ScoreChangeIndicator change = obj.GetComponent<ScoreChangeIndicator>();
+            if (change != null)
+            {
+                change.Display(scoreLost * -1);
+            }
         }
     }
 
