@@ -53,8 +53,7 @@ public class Avoider : MonoBehaviour
         {
             animator.SetFloat("xSpeed", movementVector.x);
         }
-
-        if (counting)
+        if (counting && valid)
         {
             currentTimeUntilEscape -= Time.deltaTime;
         }

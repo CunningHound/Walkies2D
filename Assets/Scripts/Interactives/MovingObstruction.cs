@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovingObstruction : MonoBehaviour
 {
     public MovingObstructionType type;
-    private Vector3 targetPosition;
+    protected Vector3 targetPosition;
 
     public float speed;
     public float acceleration;
@@ -16,7 +16,7 @@ public class MovingObstruction : MonoBehaviour
     public float obstructionTime;
     private float obstructionTimer;
     
-    void Start()
+    protected virtual void Start()
     {
         // nothing complex for now
         Vector3 pos = transform.position;
@@ -55,21 +55,20 @@ public class MovingObstruction : MonoBehaviour
         return transform.position + movementDirection * currentSpeed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject other = collision.gameObject;
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {
-            React();
-            player.React(this);
+            Activate(player);
         }
     }
 
-    private void React()
+    protected virtual void Activate(PlayerController player)
     {
+        Debug.Log("Activating moving obstruction");
         obstructed = true;
         obstructionTimer = 0;
-        // TODO: particle effects/smoke/etc?
     }
 }
