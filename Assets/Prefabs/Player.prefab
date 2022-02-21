@@ -48,13 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  maxY: 0.5
-  minY: -4
+  maxY: 0
+  minY: -4.5
   cameraTarget: {fileID: 7725036209416201037}
   cameraTargetMoveAheadDistance: 1.5
   cameraTargetMoveAheadSpeed: 0.5
   minimumSitTime: 0.2
-  scoreChangeIndicator: {fileID: 6739632643066849817, guid: 0f428897988e2414daaed043265c834d, type: 3}
   barks:
   - {fileID: 7171679507055538240, guid: 70b8b5f5bcc22d9438fdf0cefe6eda5f, type: 3}
   - {fileID: 2667149830774072508, guid: 743c2eb2a197f404e960bf780aa59568, type: 3}

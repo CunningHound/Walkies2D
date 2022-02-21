@@ -49,6 +49,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 4074134031884609791, guid: f119372a8d888dd45ae54062da91955a, type: 3}
   levelCompleteScreen: {fileID: 1701152822807947291, guid: dd94203eb95a0664797d89cbf9d9dddf, type: 3}
   player: {fileID: 0}
+  pauseScreen: {fileID: 688923061064144383, guid: 43ab2017a8b2410428a8fb80033e5450, type: 3}
   levelGenerator: {fileID: 0}
   levelLength: 100
 --- !u!114 &3118523871154980974
