@@ -343,6 +343,7 @@ MonoBehaviour:
   distanceThisLevel: 0
   subtractedThisLevel: 0
   player: {fileID: 1056901478}
+  scoreChangeIndicator: {fileID: 6739632643066849817, guid: 0f428897988e2414daaed043265c834d, type: 3}
 --- !u!4 &1829728569
 Transform:
   m_ObjectHideFlags: 0
@@ -509,14 +510,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
-      propertyPath: maxY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1826872757622061372, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
-      propertyPath: minY
-      value: -4.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1826872757622061373, guid: 5fcfa45a6ea96444e92836d3636462cd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -534,98 +527,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1056901478}
-    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: pauseScreen
-      value: 
-      objectReference: {fileID: 688923061064144383, guid: 43ab2017a8b2410428a8fb80033e5450, type: 3}
     - target: {fileID: 3118523871154980973, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: m_Name
       value: LevelManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118523871154980973, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: minY
-      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1056901474}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: maxObstacles
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: timeBetweenSpawns
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[0]
-      value: 
-      objectReference: {fileID: 7612075384758866378, guid: 6874056a6a536ff46b2a8ae7a0ffd082, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[1]
-      value: 
-      objectReference: {fileID: 2607417569044362746, guid: 73a1b7bd85d0ffe47a0da924fda4e1ac, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[2]
-      value: 
-      objectReference: {fileID: 1481607520629318932, guid: f2debf3fe0b245d4fb19ef658137638f, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[3]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[4]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[5]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[6]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[7]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[8]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[9]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[10]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[11]
-      value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[12]
-      value: 
-      objectReference: {fileID: 6556374484486794076, guid: 7ec11a8d1788057499bbe0980749afb3, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[13]
-      value: 
-      objectReference: {fileID: 6556374484486794076, guid: 7ec11a8d1788057499bbe0980749afb3, type: 3}
-    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
-      propertyPath: unlimitedSpawnables.Array.data[14]
-      value: 
-      objectReference: {fileID: 6556374484486794076, guid: 7ec11a8d1788057499bbe0980749afb3, type: 3}
     - target: {fileID: 3118523871154980975, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: m_RootOrder
       value: 2

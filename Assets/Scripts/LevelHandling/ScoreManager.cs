@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
     public PlayerController player;
 
     private static ScoreManager instance;
+    public GameObject scoreChangeIndicator;
 
     // Start is called before the first frame update
     private void Awake()
@@ -85,28 +86,58 @@ public class ScoreManager : MonoBehaviour
         scoreAtLevelStart += scoreThisLevel;
         ResetLevelScores();
     }
-    public int Penalise(ScaryThingType type)
+
+    public int Penalise(ScaryThing scaryThing)
     {
-        int scoreCost = GetScoreCost(type);
-        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
+        int scoreCost = GetScoreCost(scaryThing.scareType);
+        Debug.Log("[ScoreManager::Penalise] encountered " + scaryThing.scareType + " and lost " + scoreCost + " points");
         subtractedThisLevel += scoreCost;
+        DisplayScoreChange(scoreCost, scaryThing.transform.parent);
         return scoreCost;
     }
 
-    public int Penalise(TastyThingType type)
+    public int Penalise(TastyThing tastyThing)
     {
-        int scoreCost = GetScoreCost(type);
-        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
+        int scoreCost = GetScoreCost(tastyThing.type);
+        Debug.Log("[ScoreManager::Penalise] encountered " + tastyThing.type + " and lost " + scoreCost + " points");
         subtractedThisLevel += scoreCost;
+        DisplayScoreChange(scoreCost, tastyThing.transform.position);
         return scoreCost;
     }
 
-    public int Penalise(MovingObstructionType type)
+    public int Penalise(MovingObstruction obstruction)
     {
-        int scoreCost = GetScoreCost(type);
-        Debug.Log("[ScoreManager::Penalise] encountered " + type + " and lost " + scoreCost + " points");
+        int scoreCost = GetScoreCost(obstruction.type);
+        Debug.Log("[ScoreManager::Penalise] encountered " + obstruction.type + " and lost " + scoreCost + " points");
         subtractedThisLevel += scoreCost;
+        DisplayScoreChange(scoreCost, obstruction.transform);
         return scoreCost;
+    }
+
+    private void DisplayScoreChange(int amount, Transform parent)
+    {
+        if (amount != 0 && scoreChangeIndicator != null)
+        {
+            GameObject obj = Instantiate(scoreChangeIndicator, parent);
+            ScoreChangeIndicator change = obj.GetComponent<ScoreChangeIndicator>();
+            if (change != null)
+            {
+                change.Display(amount * -1);
+            }
+        }
+    }
+
+    private void DisplayScoreChange(int amount, Vector3 position)
+    {
+        if (amount != 0 && scoreChangeIndicator != null)
+        {
+            GameObject obj = Instantiate(scoreChangeIndicator, position, Quaternion.identity);
+            ScoreChangeIndicator change = obj.GetComponent<ScoreChangeIndicator>();
+            if (change != null)
+            {
+                change.Display(amount * -1);
+            }
+        }
     }
 
     private int GetScoreCost(ScaryThingType type)

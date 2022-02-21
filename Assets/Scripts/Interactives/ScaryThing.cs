@@ -6,11 +6,11 @@ public class ScaryThing : MonoBehaviour
 {
     public ScaryThingType scareType;
     public float timeBetweenScares;
-    private bool isActive;
-    private float scareCountdown;
+    protected bool isActive;
+    protected float scareCountdown;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         isActive = true;
         scareCountdown = 0;
@@ -33,7 +33,7 @@ public class ScaryThing : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (isActive)
         {
@@ -41,20 +41,14 @@ public class ScaryThing : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (player != null)
             {
-                player.React(this);
-                Activate();
+                Activate(player);
             }
         }
     }
 
-    void Activate()
+    protected virtual void Activate(PlayerController player)
     {
+        Debug.Log("activating scarything");
         scareCountdown = timeBetweenScares;
-        Avoider avoider = gameObject.GetComponent<Avoider>();
-        if(avoider != null)
-        {
-            Debug.Log("[ScaryThing::Activate] invalidating avoider");
-            avoider.valid = false;
-        }
     }
 }

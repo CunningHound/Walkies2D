@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private ScoreManager scoreManager;
     private Animator animator;
 
-    public GameObject scoreChangeIndicator;
     public List<AudioSource> barks;
     public List<AudioSource> chomps;
     public List<AudioSource> bikeBells;
@@ -147,92 +146,56 @@ public class PlayerController : MonoBehaviour
 
     public void React(ScaryThing scaryThing)
     {
-        Debug.Log("[PlayerController::React] reacting to ScaryThing " + scaryThing.transform.parent.name);
-        if (scoreManager != null)
+        Debug.Log("[PlayerController::React] reacting to base ScaryThing! " + scaryThing.transform.parent.name + " this shouldn't happen");
+    }
+
+    public void React(BigBlackDog bbd)
+    {
+        Debug.Log("[PlayerController::React] reacting to Big Black Dog " + bbd.transform.parent.name);
+        if(scoreManager != null)
         {
-            int scoreLost = 0;
-            switch (scaryThing.scareType)
-            {
-                case ScaryThingType.BigBlackDog:
-                    {
-                        scoreLost = scoreManager.Penalise(scaryThing.scareType);
-                        Bark();
-                        LoseLife();
-                        break;
-                    }
-                case ScaryThingType.Jogger:
-                case ScaryThingType.RubbishCollector:
-                    if (sitting)
-                    {
-                        ;
-                    }
-                    else
-                    {
-                        scoreLost = scoreManager.Penalise(scaryThing.scareType);
-                        Bark();
-                        LoseLife();
-                    }
-                    break;
-            }
-            if(scoreLost != 0 && scoreChangeIndicator != null)
-            {
-                GameObject obj = Instantiate(scoreChangeIndicator, scaryThing.transform.parent);
-                ScoreChangeIndicator change = obj.GetComponent<ScoreChangeIndicator>();
-                if (change != null)
-                {
-                    change.Display(scoreLost * -1);
-                }
-            }
+            scoreManager.Penalise(bbd);
         }
+        Bark();
+        LoseLife();
+    }
+
+    public void React(Jogger jogger)
+    {
+        Debug.Log("[PlayerController::React] reacting to Jogger " + jogger.transform.parent.name);
+        if(scoreManager != null && !sitting)
+        {
+            scoreManager.Penalise(jogger);
+        }
+        Bark();
+        LoseLife();
+    }
+
+    public void React(MovingObstruction movingObstruction)
+    {
+        Debug.Log("[PlayerController::React] reacting to base MovingObstruction! " + movingObstruction.transform.parent.name + " this shouldn't happen!");
+    }
+
+    public void React(Cyclist cyclist)
+    {
+        Debug.Log("[PlayerController::React] reacting to Cyclist: " + cyclist.transform.name);
+        if(scoreManager != null)
+        {
+            scoreManager.Penalise(cyclist);
+        }
+        RingBell();
+        LoseLife();
     }
 
     public void React(TastyThing tastyThing)
     {
         Debug.Log("[PlayerController::React] reacting to TastyThing");
-        int scoreLost = 0;
-        Chomp();
         if(scoreManager != null)
         {
-            scoreLost = scoreManager.Penalise(tastyThing.type);
-        }
-        if (scoreLost != 0 && scoreChangeIndicator != null)
-        {
-            GameObject obj = Instantiate(scoreChangeIndicator, tastyThing.transform.position, Quaternion.identity);
-            ScoreChangeIndicator change = obj.GetComponent<ScoreChangeIndicator>();
-            if (change != null)
-            {
-                change.Display(scoreLost * -1);
-            }
+            scoreManager.Penalise(tastyThing);
         }
         tastyThing.Consume();
-    }
-
-    public void React(MovingObstruction obstruction)
-    {
-        Debug.Log("[PlayerController::React] reacting to MovingObstruction: " + obstruction.type);
-        int scoreLost = 0;
-        switch(obstruction.type)
-        {
-            case MovingObstructionType.Cyclist:
-                RingBell();
-                break;
-            default:
-                break;
-        }
-        if(scoreManager != null)
-        {
-            scoreLost = scoreManager.Penalise(obstruction.type);
-            LoseLife();
-        }
-        if (scoreLost != 0 && scoreChangeIndicator != null)
-        {
-            GameObject obj = Instantiate(scoreChangeIndicator, obstruction.transform);
-            ScoreChangeIndicator change = obj.GetComponent<ScoreChangeIndicator>();
-            if (change != null)
-            {
-                change.Display(scoreLost * -1);
-            }
-        }
+        Chomp();
     }
 
     private void Sit()
