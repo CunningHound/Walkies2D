@@ -16,6 +16,6 @@ public class RubbishCollector : ScaryThing
         base.Activate(player);
 
         Debug.Log("activating Rubbish Collector");
-
+        player.React(this);
     }
 }
