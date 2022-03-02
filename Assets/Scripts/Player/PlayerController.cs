@@ -187,6 +187,17 @@ public class PlayerController : MonoBehaviour
         LoseLife();
     }
 
+    public void React(RubbishCollector collector)
+    {
+        Debug.Log("[PlayerController::React] reactig to Rubbish Collector " + collector.transform.name);
+        if(scoreManager != null)
+        {
+            scoreManager.Penalise(collector);
+        }
+        Bark();
+        LoseLife();
+    }
+
     public void React(TastyThing tastyThing)
     {
         Debug.Log("[PlayerController::React] reacting to TastyThing");
