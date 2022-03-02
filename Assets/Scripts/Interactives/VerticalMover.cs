@@ -16,6 +16,8 @@ public class VerticalMover : MonoBehaviour
 
     private bool movingUpwards;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class VerticalMover : MonoBehaviour
         waiting = false;
         transform.position = new Vector3(transform.position.x, maxY, transform.position.z);
         waitTimeElapsed = 0;
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -40,12 +43,19 @@ public class VerticalMover : MonoBehaviour
         }
         else
         {
-            float deltaY = (movingUpwards ? speed : -speed) * Time.deltaTime;
+            float ySpeed = movingUpwards ? speed : -speed;
+            float deltaY = ySpeed * Time.deltaTime;
+            animator.SetFloat("ySpeed", ySpeed);
+
             transform.position += new Vector3(0, deltaY, 0);
 
             if (transform.position.y > maxY || transform.position.y < minY )
             {
                 waiting = true;
+                if(animator != null)
+                {
+                    animator.SetTrigger(movingUpwards ? "waiting top" : "waiting bottom");
+                }
             }
         }
     }
