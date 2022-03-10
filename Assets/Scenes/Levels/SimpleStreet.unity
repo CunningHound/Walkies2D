@@ -587,5 +587,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8536818904329304607, guid: 754a98b20ee137a42ab0abdf087e66b2, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 3774548425350197589, guid: 4cdbf5f284427fa42b56a9fdd3464e33, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 5756563324521579118, guid: 3733aa1762958e148a8e7ac01b267379, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8777484227152814109, guid: f57dd1b46b3dfd348bc19af3710d9e8b, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 7268375203896651997, guid: e4d30534ca6c0234a99d5b252f9743a8, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 9137395091582981268, guid: 726009e9e1aeec348910995991fd61b8, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[8]
+      value: 
+      objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[9]
+      value: 
+      objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[10]
+      value: 
+      objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[11]
+      value: 
+      objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[12]
+      value: 
+      objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
+    - target: {fileID: 3118523871397972307, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelBackgrounds.Array.data[13]
+      value: 
+      objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}

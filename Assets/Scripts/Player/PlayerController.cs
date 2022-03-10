@@ -163,12 +163,15 @@ public class PlayerController : MonoBehaviour
     public void React(Jogger jogger)
     {
         Debug.Log("[PlayerController::React] reacting to Jogger " + jogger.transform.parent.name);
-        if(scoreManager != null && !sitting)
+        if (!sitting)
         {
-            scoreManager.Penalise(jogger);
+            if (scoreManager != null)
+            {
+                scoreManager.Penalise(jogger);
+            }
+            Bark();
+            LoseLife();
         }
-        Bark();
-        LoseLife();
     }
 
     public void React(MovingObstruction movingObstruction)
@@ -190,12 +193,15 @@ public class PlayerController : MonoBehaviour
     public void React(RubbishCollector collector)
     {
         Debug.Log("[PlayerController::React] reactig to Rubbish Collector " + collector.transform.name);
-        if(scoreManager != null)
+        if (!sitting)
         {
-            scoreManager.Penalise(collector);
+            if (scoreManager != null)
+            {
+                scoreManager.Penalise(collector);
+            }
+            Bark();
+            LoseLife();
         }
-        Bark();
-        LoseLife();
     }
 
     public void React(TastyThing tastyThing)
