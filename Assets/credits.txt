@@ -1,5 +1,6 @@
 Development and art by Cunning Hound
 
+External resources:
 
 Typeface:
 Pixel Emulator Font by Pixel Sagas 
