@@ -644,6 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 4074134031136709118}
+  scoreManager: {fileID: 11400000, guid: 151873413d51390468180761f7d44168, type: 2}
 --- !u!1 &6556903527711152295
 GameObject:
   m_ObjectHideFlags: 0

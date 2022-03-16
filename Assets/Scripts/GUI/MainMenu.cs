@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public ScoreManager scoreManager;
     public void StartGame()
     {
         SceneManager.LoadScene("SimpleStreet");
+        scoreManager.Reset();
     }
 
     public void Credits()

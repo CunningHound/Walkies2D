@@ -99,6 +99,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d3b7493d4c134bd498e0e34e402cfa1f, type: 2}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: obstacleData
+      value: 
+      objectReference: {fileID: 11400000, guid: dbca492261542a74897795aa931f80f5, type: 2}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 7171679507055538240, guid: 70b8b5f5bcc22d9438fdf0cefe6eda5f, type: 3}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 2667149830774072508, guid: 743c2eb2a197f404e960bf780aa59568, type: 3}
     - target: {fileID: 5554502529407537805, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Name
       value: Rubbish Collector
@@ -109,11 +125,6 @@ PrefabInstance:
 --- !u!1 &604239090590628349 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5554502529407537805, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
-  m_PrefabInstance: {fileID: 5005538640413551472}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7267081209784798486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2427129058643207782, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
   m_PrefabInstance: {fileID: 5005538640413551472}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &-1287785637742719368
@@ -132,19 +143,3 @@ MonoBehaviour:
   waitTime: 1
   maxY: 0
   minY: -4.2
---- !u!114 &3399857019251708781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7267081209784798486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4add0b69f93796749bb53c1099f98051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scareType: 2
-  timeBetweenScares: 2
-  binBagPrefab: {fileID: 780528540883817938, guid: e89148e87720cbc418f45c58e84f272c, type: 3}
-  binBagYpos: -4.6

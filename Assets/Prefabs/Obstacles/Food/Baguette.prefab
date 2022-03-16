@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baguette
       objectReference: {fileID: 0}
+    - target: {fileID: 3924294391049736578, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: obstacleData
+      value: 
+      objectReference: {fileID: 11400000, guid: 15b33b0ad64aae44cbd5049096428508, type: 2}
     - target: {fileID: 5008288293008540154, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
       propertyPath: m_Sprite
       value: 

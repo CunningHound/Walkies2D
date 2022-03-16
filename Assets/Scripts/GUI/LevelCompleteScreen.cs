@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 public class LevelCompleteScreen : MonoBehaviour
 {
     public Text scoreDisplay;
+    ScoreManager scoreManager;
 
     private void Start()
     {
-        if (Globals.scoreManager != null)
+        if (scoreManager != null)
         {
-            int score = Globals.scoreManager.currentScore;
+            int score = scoreManager.currentScore;
             Display(score);
         }
     }
@@ -27,9 +28,9 @@ public class LevelCompleteScreen : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene("SimpleStreet");
-        if(Globals.scoreManager!= null)
+        if(scoreManager!= null)
         {
-            Globals.scoreManager.ResetLevelScores();
+            scoreManager.Reset();
         }
         Time.timeScale = 1;
     }
@@ -37,9 +38,9 @@ public class LevelCompleteScreen : MonoBehaviour
     public void QuitGame()
     {
         SceneManager.LoadScene("MainMenu");
-        if(Globals.scoreManager!= null)
+        if(scoreManager!= null)
         {
-            Globals.scoreManager.ResetLevelScores();
+            scoreManager.Reset();
         }
     }
 }

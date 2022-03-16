@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6543f5278bd9ec24484b2653dd0fed40, type: 3}
+  m_Name: ScoreManagerSO
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreSO
+  currentScore: 0
+  scoreAtLevelStart: 0
+  distanceThisLevel: 0
+  subtractedThisLevel: 0
+  lives: 3
+  gameOverScreen: {fileID: 4074134031884609784, guid: f119372a8d888dd45ae54062da91955a, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7272953579157394655}
   - component: {fileID: 7272953579157394653}
   - component: {fileID: 7272953579157394652}
-  - component: {fileID: 7954259142161962476}
+  - component: {fileID: 2840206581415209126}
   m_Layer: 0
   m_Name: Obstruction
   m_TagString: Untagged
@@ -71,7 +71,7 @@ CapsuleCollider2D:
   m_Offset: {x: -1, y: 0.25}
   m_Size: {x: 3, y: 1}
   m_Direction: 1
---- !u!114 &7954259142161962476
+--- !u!114 &2840206581415209126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,10 +80,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7272953579157394654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d972af831f03f2458468282dd2b8eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: b8d8e4f289c70fb4cb477b7af4c09171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  obstacle: {fileID: 11400000, guid: 6a5f1f810cfa8b8458fa29acd059a915, type: 2}
   speed: 6
   acceleration: 2
   deceleration: 6

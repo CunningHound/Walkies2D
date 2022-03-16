@@ -32,7 +32,7 @@ public class PauseScreen : MonoBehaviour
     {
         if (Globals.scoreManager != null)
         {
-            Globals.scoreManager.ResetLevelScores();
+            Globals.scoreManager.Reset();
         }
         SceneManager.LoadScene("MainMenu");
     }

@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
     public float maxY;
     public float minY;
 
-    private bool sitting;
+    public bool sitting { get; private set; }
+
     public GameObject cameraTarget;
     public float cameraTargetMoveAheadDistance;
     public float cameraTargetMoveAheadSpeed;
@@ -17,42 +18,19 @@ public class PlayerController : MonoBehaviour
     private float timeSinceSitting;
 
     private LivesManager livesManager;
-    private ScoreManager scoreManager;
-    private Animator animator;
+    public ScoreManager scoreManager;
+    public Animator animator { get; private set; }
 
-    public List<AudioSource> barks;
-    public List<AudioSource> chomps;
-    public List<AudioSource> bikeBells;
+    public GameObject audioSourcePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         livesManager = Globals.livesManager;
-        scoreManager = Globals.scoreManager;
-        if (scoreManager != null)
-        {
-            scoreManager.player = this;
-        }
         sitting = false;
         timeSinceSitting = 0;
         Time.timeScale = 1;
-
-        animator = GetComponentInChildren<Animator>();
-        for(int i = 0; i < barks.Count; i++)
-        {
-            barks[i] = Instantiate(barks[i]);
-        }
-
-        for(int i = 0; i < chomps.Count; i++)
-        {
-            chomps[i] = Instantiate(chomps[i]);
-        }
-
-        for(int i = 0; i < bikeBells.Count; i++)
-        {
-            bikeBells[i] = Instantiate(bikeBells[i]);
-        }
-
     }
 
     // Update is called once per frame
@@ -118,6 +96,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
             transform.SetPositionAndRotation(newPosition, Quaternion.identity);
+            if(scoreManager != null)
+            {
+                scoreManager.setDistanceInLevel((int)gameObject.transform.position.x);
+            }
         }
 
         if (cameraTarget != null)
@@ -144,77 +126,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void React(ScaryThing scaryThing)
-    {
-        Debug.Log("[PlayerController::React] reacting to base ScaryThing! " + scaryThing.transform.parent.name + " this shouldn't happen");
-    }
-
-    public void React(BigBlackDog bbd)
-    {
-        Debug.Log("[PlayerController::React] reacting to Big Black Dog " + bbd.transform.parent.name);
-        if(scoreManager != null)
-        {
-            scoreManager.Penalise(bbd);
-        }
-        Bark();
-        LoseLife();
-    }
-
-    public void React(Jogger jogger)
-    {
-        Debug.Log("[PlayerController::React] reacting to Jogger " + jogger.transform.parent.name);
-        if (!sitting)
-        {
-            if (scoreManager != null)
-            {
-                scoreManager.Penalise(jogger);
-            }
-            Bark();
-            LoseLife();
-        }
-    }
-
-    public void React(MovingObstruction movingObstruction)
-    {
-        Debug.Log("[PlayerController::React] reacting to base MovingObstruction! " + movingObstruction.transform.parent.name + " this shouldn't happen!");
-    }
-
-    public void React(Cyclist cyclist)
-    {
-        Debug.Log("[PlayerController::React] reacting to Cyclist: " + cyclist.transform.name);
-        if(scoreManager != null)
-        {
-            scoreManager.Penalise(cyclist);
-        }
-        RingBell();
-        LoseLife();
-    }
-
-    public void React(RubbishCollector collector)
-    {
-        Debug.Log("[PlayerController::React] reactig to Rubbish Collector " + collector.transform.name);
-        if (!sitting)
-        {
-            if (scoreManager != null)
-            {
-                scoreManager.Penalise(collector);
-            }
-            Bark();
-            LoseLife();
-        }
-    }
-
-    public void React(TastyThing tastyThing)
-    {
-        Debug.Log("[PlayerController::React] reacting to TastyThing");
-        if(scoreManager != null)
-        {
-            scoreManager.Penalise(tastyThing);
-        }
-        tastyThing.Consume();
-        Chomp();
-    }
-
     private void Sit()
     {
         if(animator != null)
@@ -231,39 +142,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Bark()
+    public void PlayClip(AudioClip clip)
     {
-        Debug.Log("bark");
-        if(barks.Count > 0)
+        if (audioSourcePrefab != null)
         {
-            Debug.Log("selecting and playing a bark");
-            barks[Random.Range(0, barks.Count)].Play();
-        }
-        if (animator != null)
-        {
-            animator.SetTrigger("bark");
-        }
-    }
+            GameObject source = Instantiate(audioSourcePrefab);
 
-    private void Chomp()
-    {
-        if(chomps.Count > 0)
-        {
-            chomps[Random.Range(0, chomps.Count)].Play();
-        }
-        if(animator != null)
-        {
-            animator.SetTrigger("eat");
-        }
-    }
-
-    private void RingBell()
-    {
-        // yes it is a bit silly for this to be on the dog
-        // what are you going to do about it
-        if(bikeBells.Count > 0)
-        {
-            bikeBells[Random.Range(0, bikeBells.Count)].Play();
+            AudioSource audioSource = source.GetComponent<AudioSource>();
+            audioSource.clip = clip;
+            audioSource.Play();
+            Destroy(source, 2f);
         }
     }
 

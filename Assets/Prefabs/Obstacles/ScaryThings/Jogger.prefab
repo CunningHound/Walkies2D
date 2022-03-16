@@ -107,6 +107,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4fb38652262b8a3409675e35820d4029, type: 2}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: obstacleData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6478aacd0b3fa2e4780eb38f44ae71fe, type: 2}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 2667149830774072508, guid: 743c2eb2a197f404e960bf780aa59568, type: 3}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 7171679507055538240, guid: 70b8b5f5bcc22d9438fdf0cefe6eda5f, type: 3}
     - target: {fileID: 5554502529407537805, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Name
       value: Jogger
@@ -116,11 +132,6 @@ PrefabInstance:
 --- !u!1 &1704442456601082825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5554502529407537805, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
-  m_PrefabInstance: {fileID: 6535545481741035844}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8870981832127123234 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2427129058643207782, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
   m_PrefabInstance: {fileID: 6535545481741035844}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &-4553807376852373664
@@ -135,17 +146,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eaec30be78fdd4184445266b94de62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1739937627744297751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8870981832127123234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5214a257362f8624eab7c9c7f20e95a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scareType: 1
-  timeBetweenScares: 2

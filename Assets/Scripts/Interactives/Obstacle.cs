@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingObstruction : MonoBehaviour
+public class Obstacle : MonoBehaviour
 {
-    public MovingObstructionType type;
+    public ObstacleData obstacle;
+
     protected Vector3 targetPosition;
 
     public float speed;
@@ -44,7 +45,6 @@ public class MovingObstruction : MonoBehaviour
             currentSpeed = Mathf.Lerp(currentSpeed, 0, deceleration * Time.deltaTime);
             transform.position = GetNextPosition();
         }
-
     }
 
     private Vector3 GetNextPosition()
@@ -61,14 +61,7 @@ public class MovingObstruction : MonoBehaviour
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {
-            Activate(player);
+            obstacle.Activate(player);
         }
-    }
-
-    protected virtual void Activate(PlayerController player)
-    {
-        Debug.Log("Activating moving obstruction");
-        obstructed = true;
-        obstructionTimer = 0;
     }
 }

@@ -274,6 +274,26 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4b8048351ed80bf458546fc62a03b3ce, type: 2}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: obstacleData
+      value: 
+      objectReference: {fileID: 11400000, guid: 17f79a403d431264f95b62587e78f93f, type: 2}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 7171679507055538240, guid: 70b8b5f5bcc22d9438fdf0cefe6eda5f, type: 3}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 2667149830774072508, guid: 743c2eb2a197f404e960bf780aa59568, type: 3}
+    - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: stillScaryWhenSitting
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4662744214234590695, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: speed
       value: 1.5
@@ -285,30 +305,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3228244047772703040, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
     - {fileID: 721492727804947861, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
-    - {fileID: 3128576024605927385, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
 --- !u!4 &4313796216442473659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2650354962010656635, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
   m_PrefabInstance: {fileID: 2241206045410886592}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4518438648803780006 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2427129058643207782, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
-  m_PrefabInstance: {fileID: 2241206045410886592}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1314511295057177867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4518438648803780006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aedd8d9f8acb314aaeb696778f7f9a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scareType: 0
-  timeBetweenScares: 2
-  avoider: {fileID: 5244557838704048434}

@@ -13,13 +13,11 @@ public class LivesManager : MonoBehaviour
 
     void Awake()
     {
-        Globals.livesManager = this;
     }
 
     private void Start()
     {
         livesLeft = maxLives;
-        levelManager = Globals.levelManager;
     }
 
     public bool AddLife()
