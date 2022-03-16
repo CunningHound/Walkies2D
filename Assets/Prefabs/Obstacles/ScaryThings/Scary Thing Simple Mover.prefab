@@ -169,6 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleData: {fileID: 0}
   timeBetweenScares: 2
+  stillScaryWhenSitting: 0
+  scoreChangeIndicator: {fileID: 6739632643066849817, guid: 0f428897988e2414daaed043265c834d, type: 3}
 --- !u!1 &5554502529407537805
 GameObject:
   m_ObjectHideFlags: 0

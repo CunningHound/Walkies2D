@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0b2af3722bc1c4d8bd18f02846217a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  obstacleData: {fileID: 0}
+  scoreChangeIndicator: {fileID: 6739632643066849817, guid: 0f428897988e2414daaed043265c834d, type: 3}
 --- !u!50 &4150319937338487336
 Rigidbody2D:
   serializedVersion: 4

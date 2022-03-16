@@ -12,6 +12,7 @@ public class ScaryThing : MonoBehaviour
 
     public bool stillScaryWhenSitting;
 
+    public GameObject scoreChangeIndicator;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -56,6 +57,13 @@ public class ScaryThing : MonoBehaviour
         if (!player.sitting || stillScaryWhenSitting)
         {
             obstacleData.Activate(player);
+            if(scoreChangeIndicator != null)
+            {
+                GameObject obj = Instantiate(scoreChangeIndicator, gameObject.transform.parent);
+                ScoreChangeIndicator indicator = obj.GetComponent<ScoreChangeIndicator>();
+                indicator.Display(obstacleData.scoreCost * -1);
+                Destroy(obj, 0.5f);
+            }
         }
     }
 }

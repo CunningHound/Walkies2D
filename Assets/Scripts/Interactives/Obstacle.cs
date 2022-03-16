@@ -16,7 +16,9 @@ public class Obstacle : MonoBehaviour
     private bool obstructed;
     public float obstructionTime;
     private float obstructionTimer;
-    
+
+    public GameObject scoreChangeIndicator;
+
     protected virtual void Start()
     {
         // nothing complex for now

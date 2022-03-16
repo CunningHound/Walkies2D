@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TastyThing : MonoBehaviour
 {
-    public TastyThingType type;
     public ObstacleData obstacleData;
+    public GameObject scoreChangeIndicator;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +13,9 @@ public class TastyThing : MonoBehaviour
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {
+            GameObject obj = Instantiate(scoreChangeIndicator, gameObject.transform.position, Quaternion.identity);
+            ScoreChangeIndicator indicator = obj.transform.GetComponent<ScoreChangeIndicator>();
+            indicator.Display(obstacleData.scoreCost * -1);
             obstacleData.Activate(player);
             Destroy(gameObject, 0.5f);
         }
