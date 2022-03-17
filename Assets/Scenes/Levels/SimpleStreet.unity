@@ -495,6 +495,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1056901474}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: unlimitedSpawnables.Array.data[0]
+      value: 
+      objectReference: {fileID: 7612075384758866378, guid: 6874056a6a536ff46b2a8ae7a0ffd082, type: 3}
+    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: unlimitedSpawnables.Array.data[1]
+      value: 
+      objectReference: {fileID: 2607417569044362746, guid: 73a1b7bd85d0ffe47a0da924fda4e1ac, type: 3}
+    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: unlimitedSpawnables.Array.data[2]
+      value: 
+      objectReference: {fileID: 1481607520629318932, guid: f2debf3fe0b245d4fb19ef658137638f, type: 3}
+    - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: unlimitedSpawnables.Array.data[10]
       value: 
       objectReference: {fileID: 604239090590628349, guid: 48a9bc642fb23cc45835eadffdd4a5a5, type: 3}

@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: obstacleData
       value: 
       objectReference: {fileID: 11400000, guid: 6a5f1f810cfa8b8458fa29acd059a915, type: 2}
+    - target: {fileID: 7272953579157394652, guid: 7404b21f731fc5b4facaaf335acee902, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 7272953579157394654, guid: 7404b21f731fc5b4facaaf335acee902, type: 3}
       propertyPath: m_Name
       value: Cyclist
