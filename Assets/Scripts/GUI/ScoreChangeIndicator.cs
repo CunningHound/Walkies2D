@@ -9,7 +9,11 @@ public class ScoreChangeIndicator : MonoBehaviour
 
     public void Display(int amount)
     {
+        if (amount == 0)
+        {
+            return;
+        }
+        Debug.Log(transform.position);
         text.text = amount.ToString();
-        Destroy(gameObject, 1);
     }
 }

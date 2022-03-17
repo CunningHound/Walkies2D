@@ -99,6 +99,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d3b7493d4c134bd498e0e34e402cfa1f, type: 2}
+    - target: {fileID: 3739588316650444239, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: obstacleData
+      value: 
+      objectReference: {fileID: 11400000, guid: dbca492261542a74897795aa931f80f5, type: 2}
+    - target: {fileID: 3739588316650444239, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: scoreChangeIndicator
+      value: 
+      objectReference: {fileID: 6739632643066849817, guid: 0f428897988e2414daaed043265c834d, type: 3}
     - target: {fileID: 4600316613414110974, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: obstacleData
       value: 
@@ -122,24 +130,25 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4662744214234590695, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
---- !u!1 &604239090590628349 stripped
+--- !u!1 &7267081209784798486 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5554502529407537805, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2427129058643207782, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
   m_PrefabInstance: {fileID: 5005538640413551472}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-1287785637742719368
+--- !u!114 &3373626567410721392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604239090590628349}
+  m_GameObject: {fileID: 7267081209784798486}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4d16f37a0c3f1645a73a6030ea0f0e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
+  animator: {fileID: 0}
   waitTime: 1
   maxY: 0
   minY: -4.2

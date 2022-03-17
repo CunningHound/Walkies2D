@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892839938a5f9c147ae03126f5c6d3d7, type: 3}
   m_Name: Jogger
   m_EditorClassIdentifier: 
-  scoreCost: 5
+  scoreCost: 10
   costLife: 1
+  ignoredWhileSitting: 1
   scoreManager: {fileID: 11400000, guid: 151873413d51390468180761f7d44168, type: 2}
   animatorTriggerID: bark
   interactionSounds:

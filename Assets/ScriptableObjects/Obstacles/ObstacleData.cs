@@ -7,8 +7,9 @@ public class ObstacleData : ScriptableObject {
 
     // base SO for all kinds of Obstacles etc.
 
-    public int scoreCost = 0;
-    public bool costLife = false;
+    public int scoreCost;
+    public bool costLife;
+    public bool ignoredWhileSitting;
 
     public ScoreManager scoreManager;
 

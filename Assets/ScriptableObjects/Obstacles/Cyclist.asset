@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreCost: 10
   costLife: 1
+  ignoredWhileSitting: 0
   scoreManager: {fileID: 11400000, guid: 151873413d51390468180761f7d44168, type: 2}
   animatorTriggerID: 
   interactionSounds:

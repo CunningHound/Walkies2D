@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public ObstacleData obstacle;
-
-    protected Vector3 targetPosition;
-
-    public float speed;
-    public float acceleration;
-    public float deceleration;
-    private float currentSpeed;
-
-    private bool obstructed;
-    public float obstructionTime;
-    private float obstructionTimer;
+    public ObstacleData obstacleData;
+    IObstacleMovement movement;
 
     public GameObject scoreChangeIndicator;
 
@@ -23,38 +13,15 @@ public class Obstacle : MonoBehaviour
     {
         // nothing complex for now
         Vector3 pos = transform.position;
-        targetPosition = new Vector3(pos.x - 100, pos.y, pos.y); 
+        movement = GetComponent<IObstacleMovement>();
     }
 
     private void Update()
     {
-        if (obstructed)
+        if(movement != null)
         {
-            obstructionTimer += Time.deltaTime;
-            if(obstructionTimer > obstructionTime)
-            {
-                obstructed = false;
-            }
+            transform.parent.position = movement.GetNextPosition(gameObject.transform.parent);
         }
-
-        if (!obstructed)
-        {
-            currentSpeed = Mathf.Lerp(currentSpeed, speed, acceleration * Time.deltaTime);
-            transform.position = GetNextPosition();
-        }
-        else
-        {
-            currentSpeed = Mathf.Lerp(currentSpeed, 0, deceleration * Time.deltaTime);
-            transform.position = GetNextPosition();
-        }
-    }
-
-    private Vector3 GetNextPosition()
-    {
-        // just 1d for now
-        Vector3 movementDirection = targetPosition - transform.position;
-        movementDirection.Normalize(); 
-        return transform.position + movementDirection * currentSpeed * Time.deltaTime;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -63,7 +30,17 @@ public class Obstacle : MonoBehaviour
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {
-            obstacle.Activate(player);
+            if (!(player.sitting && obstacleData.ignoredWhileSitting))
+            {
+                obstacleData.Activate(player);
+                movement.Interaction();
+                if (scoreChangeIndicator != null)
+                {
+                    GameObject obj = Instantiate(scoreChangeIndicator, gameObject.transform.parent);
+                    ScoreChangeIndicator indicator = obj.GetComponent<ScoreChangeIndicator>();
+                    indicator.Display(obstacleData.scoreCost * -1);
+                }
+            }
         }
     }
 }
