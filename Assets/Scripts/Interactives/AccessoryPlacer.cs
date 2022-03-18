@@ -30,9 +30,4 @@ public class AccessoryPlacer : MonoBehaviour
     {
         return useParentY ? transform.position.y : y;
     }
-
-    private void OnDestroy()
-    {
-        Destroy(accessory);
-    }
 }

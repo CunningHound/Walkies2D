@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseScreen : MonoBehaviour
 {
     static PauseScreen instance;
+    public ScoreManager scoreManager;
 
     void Start()
     {
@@ -30,15 +31,17 @@ public class PauseScreen : MonoBehaviour
 
     public void QuitGame()
     {
-        if (Globals.scoreManager != null)
+        Debug.Log("[PauseScreen::QuitGame");
+        if (scoreManager != null)
         {
-            Globals.scoreManager.Reset();
+            scoreManager.Reset();
         }
         SceneManager.LoadScene("MainMenu");
     }
 
     public void Continue()
     {
+        Debug.Log("[PauseScreen::Continue");
         Time.timeScale = 1;
         Destroy(gameObject);
     }

@@ -51,6 +51,7 @@ MonoBehaviour:
   player: {fileID: 0}
   pauseScreen: {fileID: 688923061064144383, guid: 43ab2017a8b2410428a8fb80033e5450, type: 3}
   levelGenerator: {fileID: 0}
+  scoreManager: {fileID: 11400000, guid: 151873413d51390468180761f7d44168, type: 2}
   levelLength: 100
 --- !u!114 &3118523871154980974
 MonoBehaviour:

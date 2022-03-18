@@ -30,6 +30,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void PlayAgain()
     {
+        Debug.Log("[GameOverScreen::PlayAgain]");
         SceneManager.LoadScene("SimpleStreet");
         if(scoreManager!= null)
         {
@@ -40,6 +41,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void QuitGame()
     {
+        Debug.Log("[GameOverScreen::QuitGame]");
         SceneManager.LoadScene("MainMenu");
         if(scoreManager!= null)
         {
