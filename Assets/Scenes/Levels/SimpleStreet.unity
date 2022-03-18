@@ -482,6 +482,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1056901478}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: nextSceneName
+      value: SimpleStreet
+      objectReference: {fileID: 0}
     - target: {fileID: 3118523871154980973, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -622,5 +626,6 @@ PrefabInstance:
       propertyPath: levelBackgrounds.Array.data[13]
       value: 
       objectReference: {fileID: 8820328814884360222, guid: 6265946a9581238409ca2ed251789b0f, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1203281016, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}

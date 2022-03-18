@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 1701152823335906631}
   scoreManager: {fileID: 11400000, guid: 151873413d51390468180761f7d44168, type: 2}
+  nextSceneName: SimpleStreet
 --- !u!1 &1701152823020808833
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +322,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1701152822807947291}
         m_TargetAssemblyTypeName: LevelCompleteScreen, Assembly-CSharp
-        m_MethodName: PlayAgain
+        m_MethodName: KeepPlaying
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

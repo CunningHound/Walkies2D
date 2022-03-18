@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     public float minimumSitTime;
     private float timeSinceSitting;
 
-    private LivesManager livesManager;
     public ScoreManager scoreManager;
     public Animator animator { get; private set; }
 
@@ -27,7 +26,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        livesManager = Globals.livesManager;
         sitting = false;
         timeSinceSitting = 0;
         Time.timeScale = 1;
@@ -114,15 +112,6 @@ public class PlayerController : MonoBehaviour
                 float localXTarget = Mathf.Lerp(cameraTarget.transform.localPosition.x, 0, cameraTargetMoveAheadSpeed * Time.deltaTime);
                 cameraTarget.transform.localPosition = new Vector3(localXTarget, 0, 0);
             }
-        }
-    }
-
-    private void LoseLife()
-    {
-        Debug.Log("[PlayerController::LoseLife] lose life");
-        if (livesManager != null)
-        {
-            livesManager.LoseLife();
         }
     }
 

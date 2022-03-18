@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/SimpleStreet.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Levels/Tutorial_Jogger.unity
+    guid: 16fad6aced7810f4e802bf05d4b96143
+  - enabled: 1
+    path: Assets/Scenes/Levels/Tutorial_Cyclist.unity
+    guid: 4dd272ec8e50f804395652f16f81a352
+  - enabled: 1
+    path: Assets/Scenes/Levels/Tutorial_Rubbish_Collector.unity
+    guid: a39a94b37b96f0b458334b3da3fba6b2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Tutorial_Sitting.unity
+    guid: 2a96366e7740ca04f85c39aa24d3184b
+  - enabled: 1
+    path: Assets/Scenes/Levels/Tutorial_Big_Black_Dog.unity
+    guid: 8b1622b6e7f45584885f69d5bc08b969
   m_configObjects: {}

@@ -62,6 +62,7 @@ public class ScoreManager : ScriptableObject {
         lives--;
         if (lives <= 0 && gameOverScreen != null)
         {
+            Debug.Log("[ScoreManager::loseLife] " + name + " instantiating gameOverScreen: " + gameOverScreen.name);
             Instantiate(gameOverScreen);
             Time.timeScale = 0;
         }

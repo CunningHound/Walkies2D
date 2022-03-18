@@ -138,6 +138,22 @@ PrefabInstance:
       propertyPath: levelLength
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 11400000, guid: d5b3621a6aa0f484792b8445f41dcc23, type: 2}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: nextSceneName
+      value: Tutorial_Rubbish_Collector
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 9131611377416278463, guid: 5c83d4e2c03265447a2cc1a1a5d21d3e, type: 3}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelCompleteScreen
+      value: 
+      objectReference: {fileID: 2617802869393139903, guid: 56f906ba1185f6045a515f6697c8d179, type: 3}
     - target: {fileID: 3118523871154980973, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -152,7 +168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: timeBetweenSpawns
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: limitedSpawnables.Array.size
@@ -165,15 +181,15 @@ PrefabInstance:
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: unlimitedSpawnables.Array.data[0]
       value: 
-      objectReference: {fileID: 6556374484486794076, guid: 7ec11a8d1788057499bbe0980749afb3, type: 3}
+      objectReference: {fileID: 634562069198910463, guid: 8e2bc998ac16f5148a9c42b0ec8f9daf, type: 3}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: unlimitedSpawnables.Array.data[1]
       value: 
-      objectReference: {fileID: 5714649967905026750, guid: 99cdc364d0fdc2e4ebe0bfad1f8e73f8, type: 3}
+      objectReference: {fileID: 7795439749796909410, guid: d6e274367c65cd0438c0565a8ff3e7a2, type: 3}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: unlimitedSpawnables.Array.data[2]
       value: 
-      objectReference: {fileID: 8059050314178604855, guid: 6a9315de9a7bd494bb2f43eb9b0e7f71, type: 3}
+      objectReference: {fileID: 1907731102407660821, guid: 8f129eed27f5af14ba09794d8ba4482b, type: 3}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: unlimitedSpawnables.Array.data[7]
       value: 

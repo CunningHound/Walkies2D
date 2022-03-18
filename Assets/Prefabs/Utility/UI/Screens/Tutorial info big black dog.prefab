@@ -93,11 +93,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460075296199560756, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
       propertyPath: m_Text
-      value: 'sitting cannot calm the rage i feel when i see the big black dog
+      value: 'But sitting cannot tame my hatred for the big black dog!
 
 
-        RUN
-        AWAY!
+        steer
+        well clear!
 
 '
       objectReference: {fileID: 0}

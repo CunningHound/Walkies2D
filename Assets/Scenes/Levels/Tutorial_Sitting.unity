@@ -138,6 +138,22 @@ PrefabInstance:
       propertyPath: levelLength
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 11400000, guid: d5b3621a6aa0f484792b8445f41dcc23, type: 2}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: nextSceneName
+      value: Tutorial_Big_Black_Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 9131611377416278463, guid: 5c83d4e2c03265447a2cc1a1a5d21d3e, type: 3}
+    - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
+      propertyPath: levelCompleteScreen
+      value: 
+      objectReference: {fileID: 2617802869393139903, guid: 56f906ba1185f6045a515f6697c8d179, type: 3}
     - target: {fileID: 3118523871154980973, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -169,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: unlimitedSpawnables.Array.data[0]
       value: 
-      objectReference: {fileID: 1704442456601082825, guid: cb38b386403cef7468ae3ac53d906110, type: 3}
+      objectReference: {fileID: 1956452220066807988, guid: 7da6ddd933e18cc4192054f142817301, type: 3}
     - target: {fileID: 3118523871154980974, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: unlimitedSpawnables.Array.data[1]
       value: 

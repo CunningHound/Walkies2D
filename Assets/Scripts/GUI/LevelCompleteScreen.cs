@@ -8,6 +8,7 @@ public class LevelCompleteScreen : MonoBehaviour
 {
     public Text scoreDisplay;
     public ScoreManager scoreManager;
+    public string nextSceneName;
 
     private void Start()
     {
@@ -25,9 +26,9 @@ public class LevelCompleteScreen : MonoBehaviour
         scoreDisplay.text = "Score\n" + score;
     }
 
-    public void PlayAgain()
+    public void KeepPlaying()
     {
-        SceneManager.LoadScene("SimpleStreet");
+        SceneManager.LoadScene(nextSceneName);
         if(scoreManager!= null)
         {
             scoreManager.EndLevel();
