@@ -31,7 +31,7 @@ public class GameOverScreen : MonoBehaviour
     public void PlayAgain()
     {
         Debug.Log("[GameOverScreen::PlayAgain]");
-        SceneManager.LoadScene("SimpleStreet");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         if(scoreManager!= null)
         {
             scoreManager.Reset();

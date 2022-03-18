@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameOverScreen gameOverScreen;
     public LevelCompleteScreen levelCompleteScreen;
     public PlayerController player;
     public PauseScreen pauseScreen;
@@ -13,15 +12,14 @@ public class LevelManager : MonoBehaviour
 
     public ScoreManager scoreManager;
     public int levelLength;
+    public string nextSceneName;
 
-    // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
-        Globals.levelManager = this;
-    }
-    void Start()
-    {
-        Time.timeScale = 1;
+        if (levelCompleteScreen != null)
+        {
+            levelCompleteScreen.nextSceneName = nextSceneName;
+        }
     }
 
     // Update is called once per frame
@@ -45,14 +43,6 @@ public class LevelManager : MonoBehaviour
             Instantiate(levelCompleteScreen);
             scoreManager.EndLevel();
             player.transform.position = new Vector3(0, 0, 0);
-        }
-    }
-
-    public void GameOver()
-    {
-        if( gameOverScreen != null && scoreManager != null )
-        {
-            Instantiate(gameOverScreen);
         }
     }
 }

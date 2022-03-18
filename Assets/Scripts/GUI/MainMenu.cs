@@ -12,6 +12,12 @@ public class MainMenu : MonoBehaviour
         scoreManager.Reset();
     }
 
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial_Jogger");
+        scoreManager.Reset();
+    }
+
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
