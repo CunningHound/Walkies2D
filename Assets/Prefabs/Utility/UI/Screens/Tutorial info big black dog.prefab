@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &774923365132810647
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067187940522047855, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460075296199560756, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_Text
+      value: 'sitting cannot calm the rage i feel when i see the big black dog
+
+
+        RUN
+        AWAY!
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978167736501029861, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_Name
+      value: Tutorial info big black dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728336019746095361, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6170128766948326354, guid: f65848ce019dba045966d240db9b98cc, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}

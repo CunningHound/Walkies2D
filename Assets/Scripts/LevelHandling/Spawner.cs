@@ -61,7 +61,7 @@ public class Spawner : MonoBehaviour
         float xPos = playerPosition.x + maxDistance;
         float yPos = Random.Range(minY, maxY);
         Vector3 spawnPosition = new Vector3(xPos, yPos, 0);
-        if (limitedSpawnables.Count > 0 && Random.value > 0.95)
+        if (limitedSpawnables.Count > 0 && (Random.value > 0.95 || unlimitedSpawnables.Count == 0) )
         {
             int x = Random.Range(0, limitedSpawnables.Count);
             GameObject newObstacle = Instantiate(limitedSpawnables[x], spawnPosition, Quaternion.identity);
