@@ -13,22 +13,30 @@ public class SmoothMover : IObstacleMovement
     public float acceleration;
     public float deceleration;
 
-    private float pauseLength;
+    public float pauseLength;
     private float pauseTimer;
 
 
-    override public Vector3 GetNextPosition(Transform transform)
+    private void Update()
     {
-        Vector3 pos = transform.position;
         if (obstructed)
         {
             pauseTimer += Time.deltaTime;
             if(pauseTimer > pauseLength)
             {
                 obstructed = false;
+                pauseTimer = 0;
             }
         }
+        if(animator != null)
+        {
+            animator.SetFloat("speed", currentSpeed);
+        }
+    }
 
+    override public Vector3 GetNextPosition(Transform transform)
+    {
+        Vector3 pos = transform.position;
         if (!obstructed)
         {
             currentSpeed = Mathf.Lerp(currentSpeed, speed, acceleration * Time.deltaTime);
@@ -43,6 +51,7 @@ public class SmoothMover : IObstacleMovement
 
     public override void Interaction()
     {
+        Debug.Log("[SmoothMover::Interaction] ");
         obstructed = true;
         pauseTimer = 0;
     }

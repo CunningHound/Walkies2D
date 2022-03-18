@@ -101,4 +101,5 @@ MonoBehaviour:
   speed: 6
   animator: {fileID: 0}
   acceleration: 2
-  deceleration: 2
+  deceleration: 6
+  pauseLength: 2
