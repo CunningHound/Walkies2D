@@ -152,3 +152,37 @@ MonoBehaviour:
   waitTime: 1
   maxY: 0
   minY: -4.2
+--- !u!114 &5182139544236696505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267081209784798486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed41c71958644a4dbf289a0991581dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accessory: {fileID: 780528540883817938, guid: e89148e87720cbc418f45c58e84f272c, type: 3}
+  useParentX: 1
+  x: 0
+  useParentY: 0
+  y: 0
+--- !u!114 &4816476461296843866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267081209784798486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed41c71958644a4dbf289a0991581dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accessory: {fileID: 780528540883817938, guid: e89148e87720cbc418f45c58e84f272c, type: 3}
+  useParentX: 1
+  x: 0
+  useParentY: 0
+  y: -4.2
