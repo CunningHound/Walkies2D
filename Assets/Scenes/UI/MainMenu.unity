@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8be360f81513d42b9012325f15df14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 11400000, guid: 151873413d51390468180761f7d44168, type: 2}
 --- !u!114 &93743307
 MonoBehaviour:
   m_ObjectHideFlags: 0

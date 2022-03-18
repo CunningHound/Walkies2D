@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2840206581415209126, guid: 7404b21f731fc5b4facaaf335acee902, type: 3}
+      propertyPath: obstacleData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a5f1f810cfa8b8458fa29acd059a915, type: 2}
+    - target: {fileID: 6726076776437604830, guid: 7404b21f731fc5b4facaaf335acee902, type: 3}
+      propertyPath: obstacleData
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a5f1f810cfa8b8458fa29acd059a915, type: 2}
+    - target: {fileID: 7272953579157394652, guid: 7404b21f731fc5b4facaaf335acee902, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 7272953579157394654, guid: 7404b21f731fc5b4facaaf335acee902, type: 3}
       propertyPath: m_Name
       value: Cyclist
@@ -69,3 +81,26 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 15353ed5c5a77ed448756d6c4433a7bf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7404b21f731fc5b4facaaf335acee902, type: 3}
+--- !u!1 &6556374483994511691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7272953580862944969, guid: 7404b21f731fc5b4facaaf335acee902, type: 3}
+  m_PrefabInstance: {fileID: 4472729070434533250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3106361781146841140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556374483994511691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cce1dd69d29ef4d90f68b5e0c2c93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  speedVariation: 2
+  animator: {fileID: 0}
+  acceleration: 2
+  deceleration: 6
+  pauseLength: 2

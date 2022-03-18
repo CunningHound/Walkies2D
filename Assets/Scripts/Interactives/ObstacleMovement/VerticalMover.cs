@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VerticalMover : MonoBehaviour
+public class VerticalMover : IObstacleMovement
 {
     // moves up and down repeatedly
 
-    public float speed;
     public float waitTime;
     private bool waiting;
     private float waitTimeElapsed;
@@ -16,21 +15,19 @@ public class VerticalMover : MonoBehaviour
 
     private bool movingUpwards;
 
-    Animator animator;
-
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
-        movingUpwards = false;
+        base.Start();
+
+        movingUpwards = Random.Range(0f,1f) > 0.5;
         waiting = false;
-        transform.position = new Vector3(transform.position.x, maxY, transform.position.z);
         waitTimeElapsed = 0;
-        animator = GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override Vector3 GetNextPosition(Transform transform)
     {
+        Vector3 pos = transform.position;
         if (waiting)
         {
             waitTimeElapsed += Time.deltaTime;
@@ -47,16 +44,33 @@ public class VerticalMover : MonoBehaviour
             float deltaY = ySpeed * Time.deltaTime;
             animator.SetFloat("ySpeed", ySpeed);
 
-            transform.position += new Vector3(0, deltaY, 0);
+            pos += new Vector3(0, deltaY, 0);
 
-            if (transform.position.y > maxY || transform.position.y < minY )
+            if (pos.y > maxY)
             {
+                pos.y = maxY;
                 waiting = true;
                 if(animator != null)
                 {
-                    animator.SetTrigger(movingUpwards ? "waiting top" : "waiting bottom");
+                    animator.SetTrigger("waiting top");
                 }
             }
+            else if (pos.y < minY)
+            {
+                pos.y = minY;
+                waiting = true;
+                if(animator != null )
+                {
+                    animator.SetTrigger("waiting bottom");
+                }
+            }
+
         }
+        return pos;
+    }
+
+    public override void Interaction()
+    {
+        // nothing to do here
     }
 }

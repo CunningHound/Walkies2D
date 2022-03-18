@@ -4,33 +4,20 @@ using UnityEngine;
 
 public class TastyThing : MonoBehaviour
 {
-    public TastyThingType type;
+    public ObstacleData obstacleData;
+    public GameObject scoreChangeIndicator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject other = collision.gameObject;
         PlayerController player = other.GetComponent<PlayerController>();
         if (player != null)
         {
-            player.React(this);
+            GameObject obj = Instantiate(scoreChangeIndicator, gameObject.transform.position, Quaternion.identity);
+            ScoreChangeIndicator indicator = obj.transform.GetComponent<ScoreChangeIndicator>();
+            indicator.Display(obstacleData.scoreCost * -1);
+            obstacleData.Activate(player);
+            Destroy(gameObject, 0.5f);
         }
-    }
-
-    public void Consume()
-    {
-        Debug.Log("[TastyThing::Consume] " + type + " is being consumed");
-        Destroy(gameObject,0.5f);
     }
 }

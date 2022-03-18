@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3924294391049736578, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
+      propertyPath: obstacleData
+      value: 
+      objectReference: {fileID: 11400000, guid: b542abf2b5079fa40aec7057bbd746c0, type: 2}
     - target: {fileID: 5008288293008540154, guid: 141cb6869dc26f243a96c916f3d0f174, type: 3}
       propertyPath: m_Sprite
       value: 

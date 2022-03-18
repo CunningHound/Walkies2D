@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 721492727804947861}
   - component: {fileID: 152462178863226638}
   - component: {fileID: 3228244047772703040}
+  - component: {fileID: 3739588316650444239}
   m_Layer: 0
   m_Name: Scary Thing
   m_TagString: Untagged
@@ -154,6 +155,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3739588316650444239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427129058643207782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d8e4f289c70fb4cb477b7af4c09171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleData: {fileID: 0}
+  scoreChangeIndicator: {fileID: 6739632643066849817, guid: 0f428897988e2414daaed043265c834d, type: 3}
 --- !u!1 &5554502529407537805
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +178,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2650354962010656635}
-  - component: {fileID: 4662744214234590695}
   m_Layer: 0
   m_Name: Scary Thing Simple Mover
   m_TagString: Untagged
@@ -186,16 +200,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4662744214234590695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5554502529407537805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c7535fa207268f4cb667e1e3bcb114c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4

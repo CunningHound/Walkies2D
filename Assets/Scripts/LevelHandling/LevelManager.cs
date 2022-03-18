@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
 
     public LevelGenerator levelGenerator;
 
-    private ScoreManager scoreManager;
+    public ScoreManager scoreManager;
     public int levelLength;
 
     // Start is called before the first frame update
@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
-        scoreManager = Globals.scoreManager;
         Time.timeScale = 1;
     }
 

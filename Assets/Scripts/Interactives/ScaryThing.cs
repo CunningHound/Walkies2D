@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class ScaryThing : MonoBehaviour
 {
-    public ScaryThingType scareType;
+    public ObstacleData obstacleData;
+
     public float timeBetweenScares;
     protected bool isActive;
     protected float scareCountdown;
+
+    public bool stillScaryWhenSitting;
+
+    public GameObject scoreChangeIndicator;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -35,6 +40,7 @@ public class ScaryThing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("[ScaryThing::OnTriggerEnter2D] trigger entered");
         if (isActive)
         {
             GameObject other = collision.gameObject;
@@ -46,9 +52,18 @@ public class ScaryThing : MonoBehaviour
         }
     }
 
-    protected virtual void Activate(PlayerController player)
+    void Activate(PlayerController player)
     {
-        Debug.Log("activating scarything");
-        scareCountdown = timeBetweenScares;
+        if (!player.sitting || stillScaryWhenSitting)
+        {
+            obstacleData.Activate(player);
+            if(scoreChangeIndicator != null)
+            {
+                GameObject obj = Instantiate(scoreChangeIndicator, gameObject.transform.parent);
+                ScoreChangeIndicator indicator = obj.GetComponent<ScoreChangeIndicator>();
+                indicator.Display(obstacleData.scoreCost * -1);
+                Destroy(obj, 0.5f);
+            }
+        }
     }
 }

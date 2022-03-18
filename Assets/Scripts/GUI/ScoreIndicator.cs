@@ -8,12 +8,6 @@ public class ScoreIndicator : MonoBehaviour
     public ScoreManager scoreManager;
     public Text scoreIndicator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        scoreManager = Globals.scoreManager; 
-    }
-
     // Update is called once per frame
     void Update()
     {

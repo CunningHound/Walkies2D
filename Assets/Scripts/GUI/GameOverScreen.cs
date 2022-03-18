@@ -7,19 +7,22 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     public Text scoreDisplay;
+    public ScoreManager scoreManager;
 
     private void Start()
     {
-        if(Globals.scoreManager != null)
+        Debug.Log("[GameOverScreen::Start]");
+        if(scoreManager != null)
         {
-            Globals.scoreManager.EndLevel();
-            int score = Globals.scoreManager.currentScore;
+            scoreManager.EndLevel();
+            int score = scoreManager.currentScore;
             Display(score);
         }
     }
 
     public void Display(int score)
     {
+        Debug.Log("[GameOverScreen::Display]");
         Time.timeScale = 0;
         gameObject.SetActive(true);
         scoreDisplay.text = "Score\n" + score;
@@ -27,20 +30,22 @@ public class GameOverScreen : MonoBehaviour
 
     public void PlayAgain()
     {
+        Debug.Log("[GameOverScreen::PlayAgain]");
         SceneManager.LoadScene("SimpleStreet");
-        if(Globals.scoreManager!= null)
+        if(scoreManager!= null)
         {
-            Globals.scoreManager.ResetAll();
+            scoreManager.Reset();
         }
         Time.timeScale = 1;
     }
 
     public void QuitGame()
     {
+        Debug.Log("[GameOverScreen::QuitGame]");
         SceneManager.LoadScene("MainMenu");
-        if(Globals.scoreManager!= null)
+        if(scoreManager!= null)
         {
-            Globals.scoreManager.ResetAll();
+            scoreManager.Reset();
         }
         Time.timeScale = 1;
     }
