@@ -93,12 +93,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460075296199560756, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
       propertyPath: m_Text
-      value: 'joggers move so fast!
+      value: 'Probably running from the scene of their latest crime!
 
-        i don''t trust them!
+        Not
+        to be trusted!
 
-        don''t
-        let them get too close!'
+        don''t let them get too close!'
       objectReference: {fileID: 0}
     - target: {fileID: 7978167736501029861, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
       propertyPath: m_Name

@@ -47,7 +47,8 @@ public class Spawner : MonoBehaviour
         for(int i = obstacles.Count - 1; i >= 0; i--)
         {
             GameObject obstacle = obstacles[i];
-            if (obstacle != null && Mathf.Abs(obstacle.transform.position.x - player.transform.position.x) > maxDistance )
+            // fudge maxDistance a little bit to avoid things flickering in and immediately back out when the player changes direction
+            if (obstacle != null && Mathf.Abs(obstacle.transform.position.x - player.transform.position.x) > (maxDistance + 5) )
             {
                 obstacles.Remove(obstacle);
                 Destroy(obstacle);

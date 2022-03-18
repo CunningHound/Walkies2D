@@ -25,7 +25,6 @@ public class Avoider : IObstacleMovement
         if (counting && valid)
         {
             currentTimeUntilEscape -= Time.deltaTime;
-            Debug.Log("currentTimeUntilEscape = " + currentTimeUntilEscape + "; valid = " + valid);
         }
         if ( valid && currentTimeUntilEscape < 0)
         {

@@ -748,7 +748,7 @@ PrefabInstance:
     - target: {fileID: 7391984837157166107, guid: 67043fdcb50f9434e8abe3fef884d226, type: 3}
       propertyPath: scoreManager
       value: 
-      objectReference: {fileID: 11400000, guid: 151873413d51390468180761f7d44168, type: 2}
+      objectReference: {fileID: 11400000, guid: d5b3621a6aa0f484792b8445f41dcc23, type: 2}
     - target: {fileID: 8034086543455802022, guid: 67043fdcb50f9434e8abe3fef884d226, type: 3}
       propertyPath: m_Name
       value: Hud

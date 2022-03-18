@@ -15,5 +15,6 @@ public class ScoreChangeIndicator : MonoBehaviour
         }
         Debug.Log(transform.position);
         text.text = amount.ToString();
+        Destroy(gameObject, 1f);
     }
 }

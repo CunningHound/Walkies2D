@@ -168,9 +168,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5460075296199560756, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
       propertyPath: m_Text
-      value: 'Where are they even taking that stuff
+      value: 'They steal the bags with the interesting smells!
 
-        very suspicious characters!'
+        very suspicious
+        characters!'
       objectReference: {fileID: 0}
     - target: {fileID: 7978167736501029861, guid: 26de7e75f67013d468c23cdd6c597613, type: 3}
       propertyPath: m_Name

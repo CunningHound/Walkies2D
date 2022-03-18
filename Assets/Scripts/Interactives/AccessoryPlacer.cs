@@ -15,10 +15,21 @@ public class AccessoryPlacer : MonoBehaviour
     public bool useParentY;
     public float y;
 
+    public bool disappearWithParent;
+    private GameObject createdAccessory;
+
     // Start is called before the first frame update
     void Start()
     {
-        accessory = Instantiate(accessory, new Vector3(PickX(), PickY(), 0), Quaternion.identity);
+        createdAccessory = Instantiate(accessory, new Vector3(PickX(), PickY(), 0), Quaternion.identity);
+    }
+
+    void OnDelete()
+    {
+        if(createdAccessory != null)
+        {
+            Destroy(createdAccessory);
+        }
     }
 
     float PickX()

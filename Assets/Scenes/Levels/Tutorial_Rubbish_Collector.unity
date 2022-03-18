@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 1215308395}
     - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: levelLength
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3118523871154980972, guid: 8dec71e5a82d95542acfe8d557bac624, type: 3}
       propertyPath: scoreManager
