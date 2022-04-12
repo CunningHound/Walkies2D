@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 721492727804947861, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Size.x
-      value: 0.2
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 721492727804947861, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Size.y
-      value: 0.2
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 721492727804947861, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Sprite
@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2290059350817543629, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 2650354962010656635, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_RootOrder
@@ -151,8 +151,8 @@ MonoBehaviour:
   speedVariation: 0.2
   animator: {fileID: 0}
   waitTime: 1
-  maxY: 0
-  minY: -4.2
+  maxY: -0.5
+  minY: -4.5
 --- !u!114 &4816476461296843866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +169,8 @@ MonoBehaviour:
   useParentX: 1
   x: 0
   useParentY: 0
-  y: -4.2
+  y: -4.5
+  disappearWithParent: 1
 --- !u!114 &5182139544236696505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,4 +187,5 @@ MonoBehaviour:
   useParentX: 1
   x: 0
   useParentY: 0
-  y: 0
+  y: -0.5
+  disappearWithParent: 1
