@@ -116,11 +116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158939523059143915, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2158939523059143915, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2158939523059143915, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_Offset.y
@@ -129,6 +129,14 @@ PrefabInstance:
     - target: {fileID: 2290059350817543629, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290059350817543629, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2290059350817543629, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2290059350817543629, guid: 4fbbd0862738d2644a5c08d188d303da, type: 3}
       propertyPath: m_LocalPosition.y
@@ -256,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
+  speedVariation: 0
   animator: {fileID: 0}
   escapeSpeed: 4
   timeBeforeEscaping: 1
@@ -273,4 +282,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  speedVariation: 0
   animator: {fileID: 0}
