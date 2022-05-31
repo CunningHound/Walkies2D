@@ -51,3 +51,7 @@
 *.meta linguist-generated
 *.prefab linguist-generated
 *.unity linguist-generated
+
+# Collapse TextMesh Pro files on Github
+**/TextMesh?Pro/Shaders/*.shader linguist-generated
+**/TextMesh?Pro/Shaders/*.cginc linguist-generated
